@@ -132,7 +132,7 @@ export default async function LocalePage() {
                 <em className="italic text-gold-light">{tHero("titleEm")}</em>
               </h1>
               <p
-                className="font-display italic text-[clamp(1rem,2vw,1.25rem)] font-light text-cream/75 max-w-xl mx-auto mb-12 leading-[1.9]"
+                className="font-sans text-[clamp(0.95rem,1.8vw,1.1rem)] font-light text-cream/90 max-w-xl mx-auto mb-12 leading-[1.85] tracking-[0.01em]"
                 style={{ animation: "fadeUp 0.8s 0.6s both" }}
               >
                 {tHero("subtitle")}
@@ -597,7 +597,7 @@ export default async function LocalePage() {
 
             <div className="reveal flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="mailto:hello@webbinghub.io"
+                href="mailto:sales@webbinghub.io"
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-gold text-green-dark text-[0.78rem] font-medium tracking-[0.12em] uppercase hover:bg-gold-light transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 aria-label="Send an email to WebbingHUB TRAVEL"
               >
