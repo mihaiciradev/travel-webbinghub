@@ -104,13 +104,16 @@ export default async function LocalePage() {
             aria-hidden="true"
           />
 
-          <div className="relative z-10 max-w-4xl mx-auto">
-            <p
-              className={`${eyebrow} mb-8`}
-              style={{ animation: "fadeUp 0.8s 0.2s both" }}
-            >
-              {tHero("eyebrow")}
-            </p>
+          {/* Eyebrow — anchored near top, not in the centered flow */}
+          <p
+            className={`${eyebrow} absolute top-[18%] left-1/2 -translate-x-1/2 whitespace-nowrap z-10 mb-0`}
+            style={{ animation: "fadeUp 0.8s 0.2s both" }}
+          >
+            {tHero("eyebrow")}
+          </p>
+
+          {/* Main content — vertically centered with bottom clearance for SCROLL */}
+          <div className="relative z-10 max-w-4xl mx-auto pb-32">
             <h1
               className="font-display text-[clamp(3rem,8vw,6.5rem)] font-light leading-[0.93] tracking-[-0.02em] text-cream mb-6"
               style={{ animation: "fadeUp 0.8s 0.4s both" }}
@@ -121,7 +124,7 @@ export default async function LocalePage() {
               <em className="italic text-gold-light">{tHero("titleEm")}</em>
             </h1>
             <p
-              className="font-display italic text-[clamp(1rem,2.2vw,1.35rem)] font-light text-cream/60 max-w-lg mx-auto mb-12 leading-[1.8]"
+              className="font-display italic text-[clamp(1rem,2.2vw,1.35rem)] font-light text-cream/75 max-w-lg mx-auto mb-12 leading-[1.8]"
               style={{ animation: "fadeUp 0.8s 0.6s both" }}
             >
               {tHero("subtitle")}
@@ -140,7 +143,7 @@ export default async function LocalePage() {
               </a>
               <a
                 href="#what-we-build"
-                className="inline-flex items-center gap-3 px-8 py-4 border border-cream/25 text-cream/70 text-[0.75rem] tracking-[0.15em] uppercase hover:border-cream/50 hover:text-cream transition-all duration-300"
+                className="inline-flex items-center gap-3 px-8 py-4 border border-cream/30 text-cream/80 text-[0.75rem] tracking-[0.15em] uppercase hover:border-cream/55 hover:text-cream transition-all duration-300"
               >
                 {tHero("cta2")}
               </a>
@@ -148,17 +151,17 @@ export default async function LocalePage() {
           </div>
 
           <div
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
             style={{ animation: "fadeUp 0.8s 1.2s both" }}
             aria-hidden="true"
           >
-            <div
-              className="w-px h-10 bg-gradient-to-b from-gold/70 to-transparent"
-              style={{ animation: "scrollDrop 2s 1.6s infinite" }}
-            />
-            <span className="text-[0.6rem] tracking-[0.22em] uppercase text-cream/35">
+            <span className="text-[0.58rem] tracking-[0.22em] uppercase text-cream/40 mb-1">
               {tHero("scroll")}
             </span>
+            <div
+              className="w-px h-8 bg-gradient-to-b from-gold/60 to-transparent"
+              style={{ animation: "scrollDrop 2s 1.6s infinite" }}
+            />
           </div>
         </section>
 
@@ -182,7 +185,7 @@ export default async function LocalePage() {
                     duration={1200}
                     className="font-display text-4xl md:text-5xl font-light text-gold block leading-none mb-2"
                   />
-                  <p className="text-[0.72rem] tracking-[0.1em] uppercase text-cream/45 leading-[1.6]">
+                  <p className="text-[0.72rem] tracking-[0.1em] uppercase text-cream/60 leading-[1.6]">
                     {s.label}
                   </p>
                 </div>
@@ -215,7 +218,7 @@ export default async function LocalePage() {
                   className="group bg-cream hover:bg-green-dark/[0.06] border-l-2 border-gold/30 hover:border-gold p-10 relative transition-colors duration-300"
                 >
                   <span
-                    className="font-display text-[5rem] font-light text-cream-dark leading-none block mb-5"
+                    className="font-display text-[5rem] font-light text-gold/[0.28] group-hover:text-gold/40 transition-colors duration-300 leading-none block mb-5"
                     aria-hidden="true"
                   >
                     {p.number}
@@ -255,7 +258,7 @@ export default async function LocalePage() {
                 <br />
                 <em className="italic text-gold-light">{tSolutions("headingEm")}</em>
               </h2>
-              <p className="reveal text-[0.93rem] text-cream/60 leading-[1.8] max-w-sm">
+              <p className="reveal text-[0.93rem] text-cream/72 leading-[1.8] max-w-sm">
                 {tSolutions("body")}
               </p>
             </div>
@@ -275,7 +278,7 @@ export default async function LocalePage() {
                     <strong className="block text-[0.93rem] font-medium text-cream mb-1">
                       {s.title}
                     </strong>
-                    <span className="text-[0.84rem] text-cream/50 leading-[1.8]">
+                    <span className="text-[0.84rem] text-cream/65 leading-[1.8]">
                       {s.desc}
                     </span>
                   </div>
@@ -460,7 +463,7 @@ export default async function LocalePage() {
                   <h3 className="font-display text-xl font-semibold text-cream mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-cream/55 leading-[1.8]">{step.desc}</p>
+                  <p className="text-sm text-cream/75 leading-[1.8]">{step.desc}</p>
                 </li>
               ))}
             </ol>
@@ -492,7 +495,7 @@ export default async function LocalePage() {
               <br />
               <em className="italic text-gold">{tBeyond("headingEm")}</em>
             </h2>
-            <p className="reveal text-[0.93rem] text-cream/60 max-w-xl mb-20 leading-[1.8]">
+            <p className="reveal text-[0.93rem] text-cream/72 max-w-xl mb-20 leading-[1.8]">
               {tBeyond("body")}
             </p>
 
@@ -516,7 +519,7 @@ export default async function LocalePage() {
 
                     <div className="pt-8 md:pt-0">
                       <span
-                        className="font-display text-7xl md:text-8xl font-light text-gold/15 group-hover:text-gold/35 transition-all duration-300 leading-none block mb-3"
+                        className="font-display text-7xl md:text-8xl font-light text-gold/25 group-hover:text-gold/45 transition-all duration-300 leading-none block mb-3"
                         aria-hidden="true"
                       >
                         {p.num}
@@ -524,7 +527,7 @@ export default async function LocalePage() {
                       <h3 className="font-display text-xl font-semibold text-cream mb-3">
                         {p.title}
                       </h3>
-                      <p className="text-sm text-cream/55 leading-relaxed">{p.desc}</p>
+                      <p className="text-sm text-cream/72 leading-relaxed">{p.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -578,7 +581,7 @@ export default async function LocalePage() {
               <br />
               <em className="italic text-gold-light">{tCta("headingEm")}</em>
             </h2>
-            <p className="reveal text-[0.93rem] text-cream/55 max-w-md mx-auto mb-14 leading-[1.8]">
+            <p className="reveal text-[0.93rem] text-cream/70 max-w-md mx-auto mb-14 leading-[1.8]">
               {tCta("body")}
             </p>
 
