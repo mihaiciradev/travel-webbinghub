@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"D:\\\\travel-webbinghub\" -Recurse -Force)",
+      "Bash(Select-Object FullName)",
+      "Bash(Sort-Object FullName)",
+      "PowerShell(head -200)",
+      "Bash(Get-ChildItem -Path \"D:\\\\travel-webbinghub\\\\node_modules\\\\next\\\\dist\\\\docs\\\\01-app\\\\01-getting-started\\\\\" -File | Select-Object Name | Sort-Object Name)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(mkdir -p \"D:\\\\travel-webbinghub\\\\.claude\" && echo \"done\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(Start-Sleep -Seconds 4)",
+      "Bash(Invoke-WebRequest http://localhost:60749 -UseBasicParsing)",
+      "Bash(Select-Object -ExpandProperty StatusCode)",
+      "PowerShell(Start-Sleep -Seconds 5; \\(Invoke-WebRequest http://localhost:60749 -UseBasicParsing\\).StatusCode)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}
