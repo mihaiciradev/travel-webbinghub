@@ -77,10 +77,17 @@ export default async function LocalePage() {
 
       <main id="main-content">
         {/* ── HERO ─────────────────────────────────────────── */}
+        {/*
+          Three-zone flex column:
+            Zone 1 (flex-none) — eyebrow, sits just below the fixed nav
+            Zone 2 (flex-1)    — h1 + subtitle + CTAs, vertically centered in
+                                  all remaining space; never pushed by SCROLL
+            Zone 3 (flex-none) — SCROLL indicator, always at the bottom edge
+        */}
         <section
           id="hero"
           aria-label="Hero"
-          className="relative min-h-svh flex flex-col items-center justify-center text-center px-6 overflow-hidden"
+          className="relative min-h-svh flex flex-col overflow-hidden"
         >
           <Image
             src={heroBg}
@@ -104,58 +111,61 @@ export default async function LocalePage() {
             aria-hidden="true"
           />
 
-          {/* Eyebrow — anchored near top, not in the centered flow */}
-          <p
-            className={`${eyebrow} absolute top-[18%] left-1/2 -translate-x-1/2 whitespace-nowrap z-10 mb-0`}
+          {/* Zone 1 — eyebrow, clears the fixed nav (~72 px) */}
+          <div
+            className="relative z-10 flex-none flex justify-center pt-[5.5rem] pb-0 px-6"
             style={{ animation: "fadeUp 0.8s 0.2s both" }}
           >
-            {tHero("eyebrow")}
-          </p>
+            <p className={eyebrow}>{tHero("eyebrow")}</p>
+          </div>
 
-          {/* Main content — vertically centered with bottom clearance for SCROLL */}
-          <div className="relative z-10 max-w-4xl mx-auto pb-32">
-            <h1
-              className="font-display text-[clamp(3rem,8vw,6.5rem)] font-light leading-[0.93] tracking-[-0.02em] text-cream mb-6"
-              style={{ animation: "fadeUp 0.8s 0.4s both" }}
-            >
-              {tHero("title1")}
-              <br />
-              {tHero("title2")}{" "}
-              <em className="italic text-gold-light">{tHero("titleEm")}</em>
-            </h1>
-            <p
-              className="font-display italic text-[clamp(1rem,2.2vw,1.35rem)] font-light text-cream/75 max-w-lg mx-auto mb-12 leading-[1.8]"
-              style={{ animation: "fadeUp 0.8s 0.6s both" }}
-            >
-              {tHero("subtitle")}
-            </p>
-            <div
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
-              style={{ animation: "fadeUp 0.8s 0.8s both" }}
-            >
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-3 px-8 py-4 border border-gold text-gold text-[0.75rem] tracking-[0.15em] uppercase hover:bg-gold hover:text-green-dark transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
-                aria-label="Start a conversation with WebbingHUB TRAVEL"
+          {/* Zone 2 — main content, centres itself in all remaining space */}
+          <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-8">
+            <div className="max-w-4xl mx-auto w-full">
+              <h1
+                className="font-display text-[clamp(3rem,8vw,6.5rem)] font-light leading-[0.93] tracking-[-0.02em] text-cream mb-6"
+                style={{ animation: "fadeUp 0.8s 0.4s both" }}
               >
-                {tHero("cta1")}
-                <span aria-hidden="true">→</span>
-              </a>
-              <a
-                href="#what-we-build"
-                className="inline-flex items-center gap-3 px-8 py-4 border border-cream/30 text-cream/80 text-[0.75rem] tracking-[0.15em] uppercase hover:border-cream/55 hover:text-cream transition-all duration-300"
+                {tHero("title1")}
+                <br />
+                {tHero("title2")}{" "}
+                <em className="italic text-gold-light">{tHero("titleEm")}</em>
+              </h1>
+              <p
+                className="font-display italic text-[clamp(1rem,2vw,1.25rem)] font-light text-cream/75 max-w-xl mx-auto mb-12 leading-[1.9]"
+                style={{ animation: "fadeUp 0.8s 0.6s both" }}
               >
-                {tHero("cta2")}
-              </a>
+                {tHero("subtitle")}
+              </p>
+              <div
+                className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                style={{ animation: "fadeUp 0.8s 0.8s both" }}
+              >
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-3 px-8 py-4 border border-gold text-gold text-[0.75rem] tracking-[0.15em] uppercase hover:bg-gold hover:text-green-dark transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                  aria-label="Start a conversation with WebbingHUB TRAVEL"
+                >
+                  {tHero("cta1")}
+                  <span aria-hidden="true">→</span>
+                </a>
+                <a
+                  href="#what-we-build"
+                  className="inline-flex items-center gap-3 px-8 py-4 border border-cream/30 text-cream/80 text-[0.75rem] tracking-[0.15em] uppercase hover:border-cream/55 hover:text-cream transition-all duration-300"
+                >
+                  {tHero("cta2")}
+                </a>
+              </div>
             </div>
           </div>
 
+          {/* Zone 3 — SCROLL indicator, always pinned to the bottom */}
           <div
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
+            className="relative z-10 flex-none flex flex-col items-center gap-2 pb-8"
             style={{ animation: "fadeUp 0.8s 1.2s both" }}
             aria-hidden="true"
           >
-            <span className="text-[0.58rem] tracking-[0.22em] uppercase text-cream/40 mb-1">
+            <span className="text-[0.58rem] tracking-[0.22em] uppercase text-cream/40">
               {tHero("scroll")}
             </span>
             <div
