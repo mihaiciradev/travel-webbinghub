@@ -16,7 +16,8 @@
       "PowerShell(Start-Sleep -Seconds 5; \\(Invoke-WebRequest http://localhost:60749 -UseBasicParsing\\).StatusCode)",
       "mcp__Claude_in_Chrome__tabs_context_mcp",
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(cd \"D:\\\\travel-webbinghub\" && mkdir -p src/i18n messages \"src/app/[locale]\" && echo done)"
     ]
   }
 }
