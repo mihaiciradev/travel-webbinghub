@@ -1,0 +1,107 @@
+{
+  "Navigation": {
+    "visitLink": "Vizitează WebbingHUB",
+    "visitLinkShort": "WebbingHUB"
+  },
+  "Hero": {
+    "eyebrow": "Soluții web pentru turism și ospitalitate",
+    "title1": "Website-uri care muncesc",
+    "title2": "la fel de mult ca",
+    "titleEm": "echipa ta.",
+    "subtitle": "Site-uri de rezervare personalizate și instrumente digitale pentru agenții de turism și hoteluri — concepute pentru a converti vizitatorii și a simplifica operațiunile.",
+    "cta1": "Începe o conversație",
+    "cta2": "Vezi ce construim",
+    "scroll": "Derulează"
+  },
+  "Stats": {
+    "label0": "comision OTA mediu pierdut per rezervare",
+    "label1": "din căutările de călătorie încep pe telefon",
+    "label2": "înainte ca un vizitator să părăsească un site lent"
+  },
+  "Problems": {
+    "eyebrow": "Costul real al unui site web slab",
+    "heading": "Vă sună cunoscut",
+    "headingEm": "vreunul dintre acestea?",
+    "item0title": "Plata de comisioane pentru rezervări pe care le-ați putea deține direct",
+    "item0desc": "Fiecare rezervare prin Booking.com sau Expedia vă costă 15–25%. Un site web rapid și profesional oferă oaspeților încrederea de a rezerva direct cu dvs. — și păstrează acea marjă în afacerea dvs.",
+    "item1title": "Gestionarea operațiunilor prin foi de calcul și email",
+    "item1desc": "Oferte prin email, disponibilitate în Excel, istoricul clienților răspândit în căsuțe poștale. Funcționează — până când cineva lipsește sau un detaliu scapă printre degete.",
+    "item2title": "Pierderea vizitatorilor de pe mobil înainte de a rezerva",
+    "item2desc": "Peste 70% din căutările de călătorie au loc pe telefon. Dacă fluxul de rezervare nu este fluid pe mobil, acei vizitatori pleacă în câteva secunde — și rezervă la un competitor.",
+    "item3title": "Niciun sistem pentru menținerea relațiilor cu oaspeții anteriori",
+    "item3desc": "Cele mai valoroase rezervări viitoare vin de la persoane care vă cunosc deja. Fără instrumentele potrivite, acele relații se estompează după check-out — și la fel și afacerile repetate."
+  },
+  "Solutions": {
+    "eyebrow": "Ce construim",
+    "heading": "Tehnologie în serviciul",
+    "headingEm": "afacerii tale.",
+    "body": "Construim site-uri web și instrumente interne pentru agenții de turism și hoteluri — focusați pe două lucruri: transformarea mai multor vizitatori în rezervări și eficientizarea muncii zilnice a echipei tale.",
+    "item0title": "Site-uri de rezervare cu conversie ridicată",
+    "item0desc": "Site-uri rapide, mobile-first, construite pentru a câștiga încrederea oaspeților și a stimula rezervările directe — reducând dependența de platformele terțe.",
+    "item1title": "Tablouri de bord pentru agenți și operațiuni",
+    "item1desc": "Instrumente create special pentru gestionarea ofertelor, rezervărilor, disponibilității și dosarelor clienților — totul într-un singur loc, construit în jurul modului în care echipa ta lucrează cu adevărat.",
+    "item2title": "Integrări WhatsApp și mesagerie",
+    "item2desc": "Lasă oaspeții să te contacteze cum preferă și automatizează schimburile repetitive fără a pierde nota personală.",
+    "item3title": "Instrumente digitale în proprietate",
+    "item3desc": "Meniuri QR, portaluri pentru oaspeți, room service, ghiduri locale și oferte upsell — livrate direct pe telefonul oaspeților, fără descărcare de aplicație.",
+    "item4title": "Integrări terțe și API",
+    "item4desc": "Conectează-ți site-ul cu motoare de rezervare, gateway-uri de plată, manageri de canale și orice platformă deja folosită în fluxul tău de lucru."
+  },
+  "WhoWeServe": {
+    "eyebrow": "Cu cine lucrăm",
+    "heading": "Construit pentru două tipuri de",
+    "headingEm": "afaceri în ospitalitate.",
+    "hotelTitle": "Hoteluri & Stațiuni",
+    "hotelBody": "Fie că administrezi o proprietate boutique sau un resort cu mai multe locații, construim infrastructura digitală care umple camerele și fidelizează oaspeții.",
+    "hotelImageAlt": "Fațada unui hotel boutique de lux la lumina aurie",
+    "hotelF0": "Motor de rezervări directe",
+    "hotelF1": "Portal experiență oaspeți",
+    "hotelF2": "Instrumente digitale în cameră",
+    "hotelF3": "Dashboard management personal",
+    "hotelF4": "Integrare manager de canale",
+    "agencyTitle": "Agenții de Turism",
+    "agencyBody": "De la operatori mici la agenții de dimensiuni medii care gestionează zeci de agenți — construim instrumente care fac echipa ta mai rapidă și clienții mai mulțumiți.",
+    "agencyImageAlt": "Birou modern de agenție de turism cu hartă a lumii și echipă la lucru",
+    "agencyF0": "Generator de oferte și propuneri",
+    "agencyF1": "Portal operațiuni agenți",
+    "agencyF2": "Instrumente relație cu clienții",
+    "agencyF3": "Management itinerarii",
+    "agencyF4": "Automatizare WhatsApp și leads"
+  },
+  "Process": {
+    "eyebrow": "Cum lucrăm împreună",
+    "heading": "Proces simplu,",
+    "headingEm": "rezultate clare.",
+    "item0title": "Apel de descoperire",
+    "item0desc": "Ascultăm mai întâi. O conversație pentru a înțelege operațiunea ta, obiectivele tale și unde se află cu adevărat fricțiunea.",
+    "item1title": "Propunere detaliată",
+    "item1desc": "Un plan clar — ce vom construi, cât timp durează, cât costă. Fără estimări vagi, fără extra-uri ascunse.",
+    "item2title": "Dezvoltare și lansare",
+    "item2desc": "Proiectăm, dezvoltăm și predăm. Primești un produs funcțional, o echipă instruită și suport continuu."
+  },
+  "BeyondLaunch": {
+    "eyebrow": "Dincolo de lansare",
+    "heading": "Nu dispărem",
+    "headingEm": "după go-live.",
+    "body": "Majoritatea agențiilor predau cheile și merg mai departe. Noi tratăm lansarea ca pe începutul muncii, nu sfârșitul.",
+    "item0title": "Check-in-uri lunare",
+    "item0desc": "Un apel scurt și structurat în fiecare lună pentru a evalua ce funcționează, ce s-a schimbat în afacerea ta și ce ar trebui ajustat pe site.",
+    "item1title": "Monitorizarea performanței",
+    "item1desc": "Urmărim timpii de încărcare, abandonurile din fluxul de rezervare și comportamentul pe mobil — și semnalăm orice problemă înainte să o observi tu.",
+    "item2title": "Bucle de feedback",
+    "item2desc": "Echipa ta și oaspeții tăi folosesc site-ul zilnic. Colectăm acele semnale și le transformăm în îmbunătățiri concrete.",
+    "item3title": "Iterații continue",
+    "item3desc": "Îmbunătățiri mici și constante livrate regulat — ajustări de text, optimizări de viteză, funcționalități noi pe măsură ce afacerea ta evoluează."
+  },
+  "CTA": {
+    "eyebrow": "Să lucrăm împreună",
+    "heading": "Nu ești sigur de unde să începi?",
+    "headingEm": "Exact de aceea vorbim mai întâi.",
+    "body": "Fără prezentări, fără propuneri generice. Doar o conversație sinceră despre situația ta specifică — și dacă suntem echipa potrivită pentru a te ajuta.",
+    "cta1": "Ia legătura",
+    "cta2": "Vizitează WebbingHUB"
+  },
+  "Footer": {
+    "link": "webbinghub.io →"
+  }
+}

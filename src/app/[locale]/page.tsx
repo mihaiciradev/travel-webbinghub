@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { Nav } from "@/app/components/Nav";
 import { RevealObserver } from "@/app/components/RevealObserver";
@@ -7,143 +8,68 @@ import hotelImg from "@/app/assets/hotel.png";
 import travelAgencyImg from "@/app/assets/travelagency.png";
 import beyondLaunchImg from "@/app/assets/beyond_launch.png";
 
-/* ─── DATA ─────────────────────────────────────────────────── */
-
-const stats = [
-  {
-    endNum: 25,
-    startNum: 15,
-    prefix: "15–",
-    suffix: "%",
-    label: "average OTA commission lost per booking",
-  },
-  {
-    endNum: 72,
-    startNum: 0,
-    prefix: "",
-    suffix: "%",
-    label: "of travel searches start on a phone",
-  },
-  {
-    endNum: 8,
-    startNum: 0,
-    prefix: "< ",
-    suffix: "s",
-    label: "before a visitor leaves a slow website",
-  },
-];
-
-const problems = [
-  {
-    number: "01",
-    title: "Paying commission on bookings you could own directly",
-    desc: "Every reservation through Booking.com or Expedia costs you 15–25%. A fast, professional website gives guests the confidence to book with you directly — and keeps that margin in your business.",
-  },
-  {
-    number: "02",
-    title: "Running operations through spreadsheets and email",
-    desc: "Quotes in email threads, availability in Excel, client history scattered across inboxes. It holds together — until someone is unavailable or a detail slips through, and it costs you a client.",
-  },
-  {
-    number: "03",
-    title: "Losing mobile visitors before they even try to book",
-    desc: "Over 70% of travel searches happen on a phone. If your booking flow isn't seamless on mobile, those visitors are gone within seconds — and booking with a competitor who made the experience easier.",
-  },
-  {
-    number: "04",
-    title: "No system to maintain relationships with past guests",
-    desc: "Your most valuable future bookings come from people who already trust you. Without the right tools, those relationships fade after checkout — and so does the repeat business that comes with them.",
-  },
-];
-
-const solutions = [
-  {
-    title: "High-converting booking websites",
-    desc: "Fast, mobile-first sites built to earn guest trust and drive direct bookings — reducing your dependency on third-party platforms.",
-  },
-  {
-    title: "Internal agent & operations dashboards",
-    desc: "Purpose-built tools for managing quotes, reservations, availability, and client files — all in one place, built around how your team actually works.",
-  },
-  {
-    title: "WhatsApp & messaging integrations",
-    desc: "Let guests reach you the way they prefer, and automate the repetitive back-and-forth without losing the personal touch.",
-  },
-  {
-    title: "Digital in-property tools",
-    desc: "QR menus, guest portals, room service, local guides, and upsell offers — delivered straight to guests' phones, no app download required.",
-  },
-  {
-    title: "Third-party & API integrations",
-    desc: "Connect your website with booking engines, payment gateways, channel managers, and any platform already in your workflow.",
-  },
-];
-
-const hotelFeatures = [
-  "Direct booking engine",
-  "Guest experience portal",
-  "In-room digital tools",
-  "Staff operations dashboard",
-  "Channel manager integration",
-];
-
-const agencyFeatures = [
-  "Quote & proposal builder",
-  "Agent operations portal",
-  "Client relationship tools",
-  "Itinerary management",
-  "WhatsApp & lead automation",
-];
-
-const processSteps = [
-  {
-    num: "01",
-    title: "Discovery call",
-    desc: "We listen first. One conversation to understand your operation, your goals, and where the friction really is.",
-  },
-  {
-    num: "02",
-    title: "Scoped proposal",
-    desc: "A clear plan — what we'll build, how long it takes, what it costs. No vague estimates, no hidden extras.",
-  },
-  {
-    num: "03",
-    title: "Build & launch",
-    desc: "We design, develop, and hand over. You get a working product, a trained team, and ongoing support.",
-  },
-];
-
-const pillars = [
-  {
-    num: "01",
-    title: "Monthly check-ins",
-    desc: "A short, structured call every month to review what's working, what's changed in your business, and what should be adjusted on the site.",
-  },
-  {
-    num: "02",
-    title: "Performance monitoring",
-    desc: "We track load times, booking funnel drop-offs, and mobile behaviour — and flag anything that needs attention before you even notice it.",
-  },
-  {
-    num: "03",
-    title: "Feedback loops",
-    desc: "Your team and your guests use the site daily. We collect that signal and turn it into concrete improvements.",
-  },
-  {
-    num: "04",
-    title: "Rolling iterations",
-    desc: "Small, continuous improvements shipped regularly — copy tweaks, speed optimisations, new features as your business evolves.",
-  },
-];
-
 /* ─── SHARED STYLE TOKENS ───────────────────────────────────── */
-
 const eyebrow =
   "text-[0.68rem] tracking-[0.26em] uppercase text-gold/70 block mb-5";
 
 /* ─── PAGE ──────────────────────────────────────────────────── */
+export default async function LocalePage() {
+  const [tHero, tStats, tProblems, tSolutions, tWho, tProcess, tBeyond, tCta, tFooter] =
+    await Promise.all([
+      getTranslations("Hero"),
+      getTranslations("Stats"),
+      getTranslations("Problems"),
+      getTranslations("Solutions"),
+      getTranslations("WhoWeServe"),
+      getTranslations("Process"),
+      getTranslations("BeyondLaunch"),
+      getTranslations("CTA"),
+      getTranslations("Footer"),
+    ]);
 
-export default function Home() {
+  /* ─── DATA built from translations ─────────────────────── */
+  const stats = [
+    { endNum: 25, startNum: 15, prefix: "15–", suffix: "%", label: tStats("label0") },
+    { endNum: 72, startNum: 0,  prefix: "",    suffix: "%", label: tStats("label1") },
+    { endNum: 8,  startNum: 0,  prefix: "< ",  suffix: "s", label: tStats("label2") },
+  ];
+
+  const problems = [
+    { number: "01", title: tProblems("item0title"), desc: tProblems("item0desc") },
+    { number: "02", title: tProblems("item1title"), desc: tProblems("item1desc") },
+    { number: "03", title: tProblems("item2title"), desc: tProblems("item2desc") },
+    { number: "04", title: tProblems("item3title"), desc: tProblems("item3desc") },
+  ];
+
+  const solutions = [
+    { title: tSolutions("item0title"), desc: tSolutions("item0desc") },
+    { title: tSolutions("item1title"), desc: tSolutions("item1desc") },
+    { title: tSolutions("item2title"), desc: tSolutions("item2desc") },
+    { title: tSolutions("item3title"), desc: tSolutions("item3desc") },
+    { title: tSolutions("item4title"), desc: tSolutions("item4desc") },
+  ];
+
+  const hotelFeatures = [
+    tWho("hotelF0"), tWho("hotelF1"), tWho("hotelF2"), tWho("hotelF3"), tWho("hotelF4"),
+  ];
+
+  const agencyFeatures = [
+    tWho("agencyF0"), tWho("agencyF1"), tWho("agencyF2"), tWho("agencyF3"), tWho("agencyF4"),
+  ];
+
+  const processSteps = [
+    { num: "01", title: tProcess("item0title"), desc: tProcess("item0desc") },
+    { num: "02", title: tProcess("item1title"), desc: tProcess("item1desc") },
+    { num: "03", title: tProcess("item2title"), desc: tProcess("item2desc") },
+  ];
+
+  const pillars = [
+    { num: "01", title: tBeyond("item0title"), desc: tBeyond("item0desc") },
+    { num: "02", title: tBeyond("item1title"), desc: tBeyond("item1desc") },
+    { num: "03", title: tBeyond("item2title"), desc: tBeyond("item2desc") },
+    { num: "04", title: tBeyond("item3title"), desc: tBeyond("item3desc") },
+  ];
+
   return (
     <>
       <RevealObserver />
@@ -183,23 +109,22 @@ export default function Home() {
               className={`${eyebrow} mb-8`}
               style={{ animation: "fadeUp 0.8s 0.2s both" }}
             >
-              Web solutions for travel &amp; hospitality
+              {tHero("eyebrow")}
             </p>
             <h1
               className="font-display text-[clamp(3rem,8vw,6.5rem)] font-light leading-[0.93] tracking-[-0.02em] text-cream mb-6"
               style={{ animation: "fadeUp 0.8s 0.4s both" }}
             >
-              Websites that work
+              {tHero("title1")}
               <br />
-              as hard as{" "}
-              <em className="italic text-gold-light">your team does.</em>
+              {tHero("title2")}{" "}
+              <em className="italic text-gold-light">{tHero("titleEm")}</em>
             </h1>
             <p
               className="font-display italic text-[clamp(1rem,2.2vw,1.35rem)] font-light text-cream/60 max-w-lg mx-auto mb-12 leading-[1.8]"
               style={{ animation: "fadeUp 0.8s 0.6s both" }}
             >
-              Custom booking sites and digital tools for travel agencies and
-              hotels — built to convert visitors and simplify operations.
+              {tHero("subtitle")}
             </p>
             <div
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
@@ -210,14 +135,14 @@ export default function Home() {
                 className="inline-flex items-center gap-3 px-8 py-4 border border-gold text-gold text-[0.75rem] tracking-[0.15em] uppercase hover:bg-gold hover:text-green-dark transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 aria-label="Start a conversation with WebbingHUB TRAVEL"
               >
-                Start a conversation
+                {tHero("cta1")}
                 <span aria-hidden="true">→</span>
               </a>
               <a
                 href="#what-we-build"
                 className="inline-flex items-center gap-3 px-8 py-4 border border-cream/25 text-cream/70 text-[0.75rem] tracking-[0.15em] uppercase hover:border-cream/50 hover:text-cream transition-all duration-300"
               >
-                See what we build
+                {tHero("cta2")}
               </a>
             </div>
           </div>
@@ -232,7 +157,7 @@ export default function Home() {
               style={{ animation: "scrollDrop 2s 1.6s infinite" }}
             />
             <span className="text-[0.6rem] tracking-[0.22em] uppercase text-cream/35">
-              Scroll
+              {tHero("scroll")}
             </span>
           </div>
         </section>
@@ -273,16 +198,14 @@ export default function Home() {
           className="bg-cream py-28 px-6 md:px-16"
         >
           <div className="max-w-6xl mx-auto">
-            <span className={`reveal ${eyebrow}`}>
-              The real cost of a bad website
-            </span>
+            <span className={`reveal ${eyebrow}`}>{tProblems("eyebrow")}</span>
             <h2
               id="problems-heading"
               className="reveal font-display text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.08] text-ink max-w-lg mb-16"
             >
-              Does any of this
+              {tProblems("heading")}
               <br />
-              <em className="italic text-green">sound familiar?</em>
+              <em className="italic text-green">{tProblems("headingEm")}</em>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-cream-dark">
@@ -323,20 +246,17 @@ export default function Home() {
 
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start relative z-10">
             <div>
-              <span className={`reveal ${eyebrow}`}>What we build</span>
+              <span className={`reveal ${eyebrow}`}>{tSolutions("eyebrow")}</span>
               <h2
                 id="solutions-heading"
                 className="reveal font-display text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.08] text-cream mb-8"
               >
-                Technology that serves
+                {tSolutions("heading")}
                 <br />
-                <em className="italic text-gold-light">your business.</em>
+                <em className="italic text-gold-light">{tSolutions("headingEm")}</em>
               </h2>
               <p className="reveal text-[0.93rem] text-cream/60 leading-[1.8] max-w-sm">
-                We build custom websites and internal tools for travel agencies
-                and hotels — focused on two things: turning more visitors into
-                bookings, and making your team&apos;s daily work faster and less
-                manual.
+                {tSolutions("body")}
               </p>
             </div>
 
@@ -373,32 +293,30 @@ export default function Home() {
         >
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <span className={`reveal ${eyebrow}`}>Who we work with</span>
+              <span className={`reveal ${eyebrow}`}>{tWho("eyebrow")}</span>
               <h2
                 id="who-heading"
                 className="reveal font-display text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.08] text-ink mx-auto max-w-md"
               >
-                Built for two kinds of
+                {tWho("heading")}
                 <br />
-                <em className="italic text-green">hospitality business.</em>
+                <em className="italic text-green">{tWho("headingEm")}</em>
               </h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Hotels card */}
               <article className="reveal group relative bg-cream border border-cream-dark hover:border-green overflow-hidden transition-colors duration-300">
-                {/* Card image */}
                 <div className="relative w-full aspect-[3/2] overflow-hidden">
                   <Image
                     src={hotelImg}
-                    alt="Luxury boutique hotel exterior at golden hour"
+                    alt={tWho("hotelImageAlt")}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
 
-                {/* Card content */}
                 <div className="relative p-10">
                   <span
                     className="absolute font-display text-[7rem] font-light text-green/[0.05] bottom-0 right-4 leading-none pointer-events-none select-none"
@@ -420,12 +338,10 @@ export default function Home() {
                   </div>
 
                   <h3 className="font-display text-2xl font-semibold text-ink mb-3">
-                    Hotels &amp; Resorts
+                    {tWho("hotelTitle")}
                   </h3>
                   <p className="text-sm text-ink-mid leading-[1.8] mb-7 relative z-10">
-                    Whether you run a boutique property or a multi-location
-                    resort, we build the digital infrastructure that fills rooms
-                    and keeps guests coming back.
+                    {tWho("hotelBody")}
                   </p>
 
                   <ul className="flex flex-col gap-2" role="list">
@@ -447,18 +363,16 @@ export default function Home() {
 
               {/* Travel agencies card */}
               <article className="reveal group relative bg-cream border border-cream-dark hover:border-green overflow-hidden transition-colors duration-300">
-                {/* Card image */}
                 <div className="relative w-full aspect-[3/2] overflow-hidden">
                   <Image
                     src={travelAgencyImg}
-                    alt="Modern travel agency office with world map and team at work"
+                    alt={tWho("agencyImageAlt")}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
 
-                {/* Card content */}
                 <div className="relative p-10">
                   <span
                     className="absolute font-display text-[7rem] font-light text-green/[0.05] bottom-0 right-4 leading-none pointer-events-none select-none"
@@ -482,12 +396,10 @@ export default function Home() {
                   </div>
 
                   <h3 className="font-display text-2xl font-semibold text-ink mb-3">
-                    Travel Agencies
+                    {tWho("agencyTitle")}
                   </h3>
                   <p className="text-sm text-ink-mid leading-[1.8] mb-7 relative z-10">
-                    From boutique operators to mid-size agencies managing dozens
-                    of agents — we build tools that make your team faster and
-                    your clients more satisfied.
+                    {tWho("agencyBody")}
                   </p>
 
                   <ul className="flex flex-col gap-2" role="list">
@@ -518,14 +430,14 @@ export default function Home() {
         >
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <span className={`reveal ${eyebrow}`}>How we work together</span>
+              <span className={`reveal ${eyebrow}`}>{tProcess("eyebrow")}</span>
               <h2
                 id="process-heading"
                 className="reveal font-display text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.08] text-cream"
               >
-                Simple process,
+                {tProcess("heading")}
                 <br />
-                <em className="italic text-gold-light">clear outcomes.</em>
+                <em className="italic text-gold-light">{tProcess("headingEm")}</em>
               </h2>
             </div>
 
@@ -548,9 +460,7 @@ export default function Home() {
                   <h3 className="font-display text-xl font-semibold text-cream mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-cream/55 leading-[1.8]">
-                    {step.desc}
-                  </p>
+                  <p className="text-sm text-cream/55 leading-[1.8]">{step.desc}</p>
                 </li>
               ))}
             </ol>
@@ -563,7 +473,6 @@ export default function Home() {
           aria-labelledby="beyond-launch-heading"
           className="bg-green-dark py-28 px-6 md:px-16 relative overflow-hidden"
         >
-          {/* Background image — very subtle texture */}
           <Image
             src={beyondLaunchImg}
             alt=""
@@ -574,24 +483,20 @@ export default function Home() {
           />
 
           <div className="relative z-10 max-w-6xl mx-auto">
-            {/* Header */}
-            <span className={`reveal ${eyebrow}`}>Beyond launch</span>
+            <span className={`reveal ${eyebrow}`}>{tBeyond("eyebrow")}</span>
             <h2
               id="beyond-launch-heading"
               className="reveal font-display text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.08] text-cream mb-6 max-w-xl"
             >
-              We don&apos;t disappear
+              {tBeyond("heading")}
               <br />
-              <em className="italic text-gold">after go-live.</em>
+              <em className="italic text-gold">{tBeyond("headingEm")}</em>
             </h2>
             <p className="reveal text-[0.93rem] text-cream/60 max-w-xl mb-20 leading-[1.8]">
-              Most agencies hand over the keys and move on. We treat launch as
-              the beginning of the work, not the end.
+              {tBeyond("body")}
             </p>
 
-            {/* 4-pillar layout */}
             <div className="relative">
-              {/* Connecting line — desktop only */}
               <div
                 className="hidden md:block absolute top-0 inset-x-0 h-px bg-gold/25"
                 aria-hidden="true"
@@ -604,28 +509,22 @@ export default function Home() {
                     className="reveal group relative pt-0 md:pt-10 md:px-8 first:md:pl-0 last:md:pr-0 border-t border-gold/20 md:border-0 first:border-0 md:first:border-0"
                     style={{ transitionDelay: `${(i + 1) * 0.1}s` }}
                   >
-                    {/* Gold dot sitting on the line — desktop only */}
                     <div
                       className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-gold group-hover:scale-125 transition-all duration-300"
                       aria-hidden="true"
                     />
 
-                    {/* Mobile: small top spacing instead of line */}
                     <div className="pt-8 md:pt-0">
-                      {/* Decorative number */}
                       <span
                         className="font-display text-7xl md:text-8xl font-light text-gold/15 group-hover:text-gold/35 transition-all duration-300 leading-none block mb-3"
                         aria-hidden="true"
                       >
                         {p.num}
                       </span>
-
                       <h3 className="font-display text-xl font-semibold text-cream mb-3">
                         {p.title}
                       </h3>
-                      <p className="text-sm text-cream/55 leading-relaxed">
-                        {p.desc}
-                      </p>
+                      <p className="text-sm text-cream/55 leading-relaxed">{p.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -640,7 +539,6 @@ export default function Home() {
           aria-labelledby="cta-heading"
           className="bg-green-dark py-44 px-6 md:px-16 text-center relative overflow-hidden"
         >
-          {/* SVG dot-grid background pattern */}
           <svg
             className="absolute inset-0 w-full h-full opacity-[0.045] pointer-events-none"
             aria-hidden="true"
@@ -661,7 +559,6 @@ export default function Home() {
             <rect width="100%" height="100%" fill="url(#cta-dot-grid)" />
           </svg>
 
-          {/* Decorative rings */}
           <div
             className="absolute inset-0 flex items-center justify-center pointer-events-none"
             aria-hidden="true"
@@ -672,21 +569,17 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 max-w-2xl mx-auto">
-            <span className={`reveal ${eyebrow}`}>Let&apos;s work together</span>
+            <span className={`reveal ${eyebrow}`}>{tCta("eyebrow")}</span>
             <h2
               id="cta-heading"
               className="reveal font-display text-[clamp(2.2rem,6vw,4rem)] font-light leading-[1.08] text-cream mb-6"
             >
-              Not sure where to start?
+              {tCta("heading")}
               <br />
-              <em className="italic text-gold-light">
-                That&apos;s exactly why we talk first.
-              </em>
+              <em className="italic text-gold-light">{tCta("headingEm")}</em>
             </h2>
             <p className="reveal text-[0.93rem] text-cream/55 max-w-md mx-auto mb-14 leading-[1.8]">
-              No presentations, no off-the-shelf proposals. Just an honest
-              conversation about your specific situation — and whether
-              we&apos;re the right team to help.
+              {tCta("body")}
             </p>
 
             <div className="reveal flex flex-col sm:flex-row gap-4 justify-center">
@@ -695,7 +588,7 @@ export default function Home() {
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-gold text-green-dark text-[0.78rem] font-medium tracking-[0.12em] uppercase hover:bg-gold-light transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 aria-label="Send an email to WebbingHUB TRAVEL"
               >
-                Get in touch
+                {tCta("cta1")}
                 <span aria-hidden="true">→</span>
               </a>
               <a
@@ -705,7 +598,7 @@ export default function Home() {
                 className="inline-flex items-center justify-center gap-3 px-10 py-4 border border-cream/25 text-cream/70 text-[0.78rem] tracking-[0.12em] uppercase hover:border-cream/50 hover:text-cream transition-all duration-300"
                 aria-label="Visit WebbingHUB main website (opens in new tab)"
               >
-                Visit WebbingHUB
+                {tCta("cta2")}
               </a>
             </div>
           </div>
@@ -733,7 +626,7 @@ export default function Home() {
             className="text-[0.72rem] tracking-[0.14em] uppercase text-cream/35 hover:text-gold transition-colors duration-200"
             aria-label="Visit WebbingHUB main website"
           >
-            webbinghub.io →
+            {tFooter("link")}
           </a>
         </nav>
       </footer>

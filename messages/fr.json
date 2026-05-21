@@ -1,0 +1,107 @@
+{
+  "Navigation": {
+    "visitLink": "Visiter WebbingHUB",
+    "visitLinkShort": "WebbingHUB"
+  },
+  "Hero": {
+    "eyebrow": "Solutions web pour le voyage et l'hôtellerie",
+    "title1": "Des sites web qui travaillent",
+    "title2": "aussi dur que",
+    "titleEm": "votre équipe.",
+    "subtitle": "Sites de réservation sur mesure et outils numériques pour les agences de voyage et les hôtels — conçus pour convertir les visiteurs et simplifier les opérations.",
+    "cta1": "Commencer une conversation",
+    "cta2": "Voir ce que nous construisons",
+    "scroll": "Défiler"
+  },
+  "Stats": {
+    "label0": "de commission OTA perdue en moyenne par réservation",
+    "label1": "des recherches voyage débutent sur mobile",
+    "label2": "avant qu'un visiteur quitte un site lent"
+  },
+  "Problems": {
+    "eyebrow": "Le vrai coût d'un mauvais site web",
+    "heading": "Est-ce que cela vous",
+    "headingEm": "semble familier ?",
+    "item0title": "Payer des commissions sur des réservations que vous pourriez détenir directement",
+    "item0desc": "Chaque réservation via Booking.com ou Expedia vous coûte 15 à 25 %. Un site rapide et professionnel donne aux clients la confiance de réserver directement chez vous — et préserve cette marge dans votre entreprise.",
+    "item1title": "Gérer les opérations avec des tableurs et des e-mails",
+    "item1desc": "Devis par e-mail, disponibilités sur Excel, historique clients éparpillé entre les boîtes de réception. Ça tient — jusqu'au jour où quelqu'un est indisponible ou qu'un détail passe à travers les mailles.",
+    "item2title": "Perdre des visiteurs mobiles avant même qu'ils tentent de réserver",
+    "item2desc": "Plus de 70 % des recherches de voyage se font sur mobile. Si votre parcours de réservation n'est pas fluide sur téléphone, ces visiteurs partent en quelques secondes — et réservent chez un concurrent.",
+    "item3title": "Aucun système pour entretenir les relations avec les clients passés",
+    "item3desc": "Vos réservations futures les plus précieuses viennent de personnes qui vous font déjà confiance. Sans les bons outils, ces relations s'effacent après le séjour — et le bouche-à-oreille avec elles."
+  },
+  "Solutions": {
+    "eyebrow": "Ce que nous construisons",
+    "heading": "Une technologie au service",
+    "headingEm": "de votre activité.",
+    "body": "Nous créons des sites web et des outils internes pour les agences de voyage et les hôtels — avec deux priorités : transformer davantage de visiteurs en réservations, et rendre le quotidien de votre équipe plus rapide et moins manuel.",
+    "item0title": "Sites de réservation à fort taux de conversion",
+    "item0desc": "Sites rapides et pensés mobile-first, conçus pour gagner la confiance des clients et encourager les réservations directes — en réduisant votre dépendance aux plateformes tierces.",
+    "item1title": "Tableaux de bord agents & opérations",
+    "item1desc": "Des outils sur mesure pour gérer devis, réservations, disponibilités et dossiers clients — au même endroit, conçus autour de la façon dont votre équipe travaille vraiment.",
+    "item2title": "Intégrations WhatsApp & messagerie",
+    "item2desc": "Laissez vos clients vous contacter comme ils le préfèrent, et automatisez les échanges répétitifs sans perdre la touche personnelle.",
+    "item3title": "Outils numériques en établissement",
+    "item3desc": "Menus QR, portails clients, room service, guides locaux et offres upsell — envoyés directement sur le téléphone de vos hôtes, sans téléchargement d'application.",
+    "item4title": "Intégrations tierces & API",
+    "item4desc": "Connectez votre site à des moteurs de réservation, passerelles de paiement, gestionnaires de canaux et toute plateforme déjà dans votre workflow."
+  },
+  "WhoWeServe": {
+    "eyebrow": "Avec qui nous travaillons",
+    "heading": "Conçu pour deux types",
+    "headingEm": "d'entreprises hôtelières.",
+    "hotelTitle": "Hôtels & Resorts",
+    "hotelBody": "Que vous dirigiez une propriété boutique ou un resort multi-sites, nous construisons l'infrastructure numérique qui remplit les chambres et fidélise les clients.",
+    "hotelImageAlt": "Façade d'un hôtel boutique de luxe à l'heure dorée",
+    "hotelF0": "Moteur de réservation directe",
+    "hotelF1": "Portail expérience client",
+    "hotelF2": "Outils numériques en chambre",
+    "hotelF3": "Tableau de bord du personnel",
+    "hotelF4": "Intégration gestionnaire de canaux",
+    "agencyTitle": "Agences de Voyage",
+    "agencyBody": "Des petits opérateurs aux agences de taille moyenne gérant des dizaines d'agents — nous créons des outils qui rendent votre équipe plus efficace et vos clients plus satisfaits.",
+    "agencyImageAlt": "Bureau d'agence de voyage moderne avec carte du monde et équipe au travail",
+    "agencyF0": "Générateur de devis & propositions",
+    "agencyF1": "Portail opérations agents",
+    "agencyF2": "Outils de relation client",
+    "agencyF3": "Gestion des itinéraires",
+    "agencyF4": "Automatisation WhatsApp & leads"
+  },
+  "Process": {
+    "eyebrow": "Comment nous travaillons ensemble",
+    "heading": "Un processus simple,",
+    "headingEm": "des résultats clairs.",
+    "item0title": "Appel de découverte",
+    "item0desc": "Nous écoutons d'abord. Une conversation pour comprendre votre activité, vos objectifs et où se trouvent vraiment les points de friction.",
+    "item1title": "Proposition cadrée",
+    "item1desc": "Un plan clair — ce que nous allons construire, combien de temps cela prend, ce que ça coûte. Pas d'estimations vagues, pas de suppléments cachés.",
+    "item2title": "Développement & lancement",
+    "item2desc": "Nous concevons, développons et livrons. Vous obtenez un produit fonctionnel, une équipe formée et un support continu."
+  },
+  "BeyondLaunch": {
+    "eyebrow": "Au-delà du lancement",
+    "heading": "Nous ne disparaissons pas",
+    "headingEm": "après la mise en ligne.",
+    "body": "La plupart des agences remettent les clés et passent à autre chose. Nous considérons le lancement comme le début du travail, pas la fin.",
+    "item0title": "Points mensuels",
+    "item0desc": "Un appel court et structuré chaque mois pour faire le point sur ce qui fonctionne, ce qui a changé dans votre activité, et ce qui doit être ajusté sur le site.",
+    "item1title": "Monitoring des performances",
+    "item1desc": "Nous suivons les temps de chargement, les abandons dans le tunnel de réservation et le comportement mobile — et signalons tout ce qui nécessite attention avant que vous ne le remarquiez.",
+    "item2title": "Boucles de feedback",
+    "item2desc": "Votre équipe et vos clients utilisent le site quotidiennement. Nous collectons ces signaux et les transformons en améliorations concrètes.",
+    "item3title": "Itérations continues",
+    "item3desc": "Des améliorations régulières et continues — ajustements de textes, optimisations de vitesse, nouvelles fonctionnalités au fil de l'évolution de votre activité."
+  },
+  "CTA": {
+    "eyebrow": "Travaillons ensemble",
+    "heading": "Pas sûr par où commencer ?",
+    "headingEm": "C'est exactement pour ça qu'on parle d'abord.",
+    "body": "Pas de présentations, pas de propositions génériques. Juste une conversation honnête sur votre situation spécifique — et si nous sommes la bonne équipe pour vous aider.",
+    "cta1": "Nous contacter",
+    "cta2": "Visiter WebbingHUB"
+  },
+  "Footer": {
+    "link": "webbinghub.io →"
+  }
+}

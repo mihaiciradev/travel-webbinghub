@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const t = useTranslations("Navigation");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -21,6 +24,7 @@ export function Nav() {
           : "py-6 bg-transparent"
       }`}
     >
+      {/* Logo */}
       <Link href="/" aria-label="TRAVEL by WebbingHUB — homepage">
         <span className="font-display text-base md:text-lg tracking-[0.15em] text-cream uppercase select-none">
           Travel{" "}
@@ -32,20 +36,25 @@ export function Nav() {
         </span>
       </Link>
 
-      <a
-        href="https://webbinghub.io"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2.5 text-[0.65rem] sm:text-[0.72rem] tracking-[0.12em] sm:tracking-[0.14em] uppercase text-cream/60 hover:text-cream transition-colors duration-200 whitespace-nowrap"
-        aria-label="Visit WebbingHUB main website (opens in new tab)"
-      >
-        <span
-          className="hidden sm:block w-5 h-px bg-gold flex-shrink-0"
-          aria-hidden="true"
-        />
-        <span className="sm:hidden">WebbingHUB</span>
-        <span className="hidden sm:inline">Visit WebbingHUB</span>
-      </a>
+      {/* Right side: language switcher + WebbingHUB link */}
+      <div className="flex items-center gap-4 sm:gap-6">
+        <LanguageSwitcher />
+
+        <a
+          href="https://webbinghub.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2.5 text-[0.65rem] sm:text-[0.72rem] tracking-[0.12em] sm:tracking-[0.14em] uppercase text-cream/60 hover:text-cream transition-colors duration-200 whitespace-nowrap"
+          aria-label="Visit WebbingHUB main website (opens in new tab)"
+        >
+          <span
+            className="hidden sm:block w-5 h-px bg-gold flex-shrink-0"
+            aria-hidden="true"
+          />
+          <span className="sm:hidden">{t("visitLinkShort")}</span>
+          <span className="hidden sm:inline">{t("visitLink")}</span>
+        </a>
+      </div>
     </header>
   );
 }

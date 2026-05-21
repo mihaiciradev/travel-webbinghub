@@ -1,0 +1,107 @@
+{
+  "Navigation": {
+    "visitLink": "Visit WebbingHUB",
+    "visitLinkShort": "WebbingHUB"
+  },
+  "Hero": {
+    "eyebrow": "Web solutions for travel & hospitality",
+    "title1": "Websites that work",
+    "title2": "as hard as",
+    "titleEm": "your team does.",
+    "subtitle": "Custom booking sites and digital tools for travel agencies and hotels — built to convert visitors and simplify operations.",
+    "cta1": "Start a conversation",
+    "cta2": "See what we build",
+    "scroll": "Scroll"
+  },
+  "Stats": {
+    "label0": "average OTA commission lost per booking",
+    "label1": "of travel searches start on a phone",
+    "label2": "before a visitor leaves a slow website"
+  },
+  "Problems": {
+    "eyebrow": "The real cost of a bad website",
+    "heading": "Does any of this",
+    "headingEm": "sound familiar?",
+    "item0title": "Paying commission on bookings you could own directly",
+    "item0desc": "Every reservation through Booking.com or Expedia costs you 15–25%. A fast, professional website gives guests the confidence to book with you directly — and keeps that margin in your business.",
+    "item1title": "Running operations through spreadsheets and email",
+    "item1desc": "Quotes in email threads, availability in Excel, client history scattered across inboxes. It holds together — until someone is unavailable or a detail slips through, and it costs you a client.",
+    "item2title": "Losing mobile visitors before they even try to book",
+    "item2desc": "Over 70% of travel searches happen on a phone. If your booking flow isn't seamless on mobile, those visitors are gone within seconds — and booking with a competitor who made the experience easier.",
+    "item3title": "No system to maintain relationships with past guests",
+    "item3desc": "Your most valuable future bookings come from people who already trust you. Without the right tools, those relationships fade after checkout — and so does the repeat business that comes with them."
+  },
+  "Solutions": {
+    "eyebrow": "What we build",
+    "heading": "Technology that serves",
+    "headingEm": "your business.",
+    "body": "We build custom websites and internal tools for travel agencies and hotels — focused on two things: turning more visitors into bookings, and making your team's daily work faster and less manual.",
+    "item0title": "High-converting booking websites",
+    "item0desc": "Fast, mobile-first sites built to earn guest trust and drive direct bookings — reducing your dependency on third-party platforms.",
+    "item1title": "Internal agent & operations dashboards",
+    "item1desc": "Purpose-built tools for managing quotes, reservations, availability, and client files — all in one place, built around how your team actually works.",
+    "item2title": "WhatsApp & messaging integrations",
+    "item2desc": "Let guests reach you the way they prefer, and automate the repetitive back-and-forth without losing the personal touch.",
+    "item3title": "Digital in-property tools",
+    "item3desc": "QR menus, guest portals, room service, local guides, and upsell offers — delivered straight to guests' phones, no app download required.",
+    "item4title": "Third-party & API integrations",
+    "item4desc": "Connect your website with booking engines, payment gateways, channel managers, and any platform already in your workflow."
+  },
+  "WhoWeServe": {
+    "eyebrow": "Who we work with",
+    "heading": "Built for two kinds of",
+    "headingEm": "hospitality business.",
+    "hotelTitle": "Hotels & Resorts",
+    "hotelBody": "Whether you run a boutique property or a multi-location resort, we build the digital infrastructure that fills rooms and keeps guests coming back.",
+    "hotelImageAlt": "Luxury boutique hotel exterior at golden hour",
+    "hotelF0": "Direct booking engine",
+    "hotelF1": "Guest experience portal",
+    "hotelF2": "In-room digital tools",
+    "hotelF3": "Staff operations dashboard",
+    "hotelF4": "Channel manager integration",
+    "agencyTitle": "Travel Agencies",
+    "agencyBody": "From boutique operators to mid-size agencies managing dozens of agents — we build tools that make your team faster and your clients more satisfied.",
+    "agencyImageAlt": "Modern travel agency office with world map and team at work",
+    "agencyF0": "Quote & proposal builder",
+    "agencyF1": "Agent operations portal",
+    "agencyF2": "Client relationship tools",
+    "agencyF3": "Itinerary management",
+    "agencyF4": "WhatsApp & lead automation"
+  },
+  "Process": {
+    "eyebrow": "How we work together",
+    "heading": "Simple process,",
+    "headingEm": "clear outcomes.",
+    "item0title": "Discovery call",
+    "item0desc": "We listen first. One conversation to understand your operation, your goals, and where the friction really is.",
+    "item1title": "Scoped proposal",
+    "item1desc": "A clear plan — what we'll build, how long it takes, what it costs. No vague estimates, no hidden extras.",
+    "item2title": "Build & launch",
+    "item2desc": "We design, develop, and hand over. You get a working product, a trained team, and ongoing support."
+  },
+  "BeyondLaunch": {
+    "eyebrow": "Beyond launch",
+    "heading": "We don't disappear",
+    "headingEm": "after go-live.",
+    "body": "Most agencies hand over the keys and move on. We treat launch as the beginning of the work, not the end.",
+    "item0title": "Monthly check-ins",
+    "item0desc": "A short, structured call every month to review what's working, what's changed in your business, and what should be adjusted on the site.",
+    "item1title": "Performance monitoring",
+    "item1desc": "We track load times, booking funnel drop-offs, and mobile behaviour — and flag anything that needs attention before you even notice it.",
+    "item2title": "Feedback loops",
+    "item2desc": "Your team and your guests use the site daily. We collect that signal and turn it into concrete improvements.",
+    "item3title": "Rolling iterations",
+    "item3desc": "Small, continuous improvements shipped regularly — copy tweaks, speed optimisations, new features as your business evolves."
+  },
+  "CTA": {
+    "eyebrow": "Let's work together",
+    "heading": "Not sure where to start?",
+    "headingEm": "That's exactly why we talk first.",
+    "body": "No presentations, no off-the-shelf proposals. Just an honest conversation about your specific situation — and whether we're the right team to help.",
+    "cta1": "Get in touch",
+    "cta2": "Visit WebbingHUB"
+  },
+  "Footer": {
+    "link": "webbinghub.io →"
+  }
+}

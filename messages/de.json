@@ -1,0 +1,107 @@
+{
+  "Navigation": {
+    "visitLink": "WebbingHUB besuchen",
+    "visitLinkShort": "WebbingHUB"
+  },
+  "Hero": {
+    "eyebrow": "Weblösungen für Reise & Hotellerie",
+    "title1": "Websites, die so hart",
+    "title2": "arbeiten wie",
+    "titleEm": "Ihr Team.",
+    "subtitle": "Maßgeschneiderte Buchungsseiten und digitale Tools für Reisebüros und Hotels — entwickelt, um Besucher in Buchungen zu verwandeln und den Betrieb zu vereinfachen.",
+    "cta1": "Gespräch beginnen",
+    "cta2": "Unsere Arbeit entdecken",
+    "scroll": "Scrollen"
+  },
+  "Stats": {
+    "label0": "durchschnittliche OTA-Provision pro Buchung",
+    "label1": "der Reiseanfragen starten auf dem Smartphone",
+    "label2": "bis ein Besucher eine langsame Website verlässt"
+  },
+  "Problems": {
+    "eyebrow": "Die wahren Kosten einer schlechten Website",
+    "heading": "Kommt Ihnen das",
+    "headingEm": "bekannt vor?",
+    "item0title": "Provisionen für Buchungen zahlen, die Sie direkt abwickeln könnten",
+    "item0desc": "Jede Buchung über Booking.com oder Expedia kostet Sie 15–25 %. Eine schnelle, professionelle Website gibt Gästen das Vertrauen, direkt bei Ihnen zu buchen — und hält diese Marge in Ihrem Unternehmen.",
+    "item1title": "Betrieb mit Tabellen und E-Mails managen",
+    "item1desc": "Angebote per E-Mail, Verfügbarkeit in Excel, Kundenhistorie über Postfächer verteilt. Das funktioniert — bis jemand nicht erreichbar ist oder ein Detail durchrutscht.",
+    "item2title": "Mobile Besucher verlieren, bevor sie überhaupt buchen",
+    "item2desc": "Über 70 % der Reisesuchen finden auf dem Smartphone statt. Wenn Ihr Buchungsprozess auf Mobilgeräten nicht reibungslos läuft, sind diese Besucher in Sekunden weg — und buchen beim Wettbewerber.",
+    "item3title": "Kein System zur Pflege von Beziehungen zu früheren Gästen",
+    "item3desc": "Ihre wertvollsten zukünftigen Buchungen kommen von Menschen, die Ihnen bereits vertrauen. Ohne die richtigen Tools verblassen diese Beziehungen nach dem Aufenthalt — und mit ihnen das Folgegeschäft."
+  },
+  "Solutions": {
+    "eyebrow": "Was wir bauen",
+    "heading": "Technologie im Dienst",
+    "headingEm": "Ihres Unternehmens.",
+    "body": "Wir bauen maßgeschneiderte Websites und interne Tools für Reisebüros und Hotels — mit zwei Schwerpunkten: mehr Besucher in Buchungen umwandeln und den Arbeitsalltag Ihres Teams schneller und weniger manuell gestalten.",
+    "item0title": "Buchungswebsites mit hoher Conversion",
+    "item0desc": "Schnelle, mobile-first Seiten, die Gästevertrauen aufbauen und Direktbuchungen fördern — um Ihre Abhängigkeit von Drittplattformen zu reduzieren.",
+    "item1title": "Interne Agenten- & Betriebsdashboards",
+    "item1desc": "Speziell entwickelte Tools zur Verwaltung von Angeboten, Buchungen, Verfügbarkeiten und Kundendateien — alles an einem Ort, aufgebaut um die tatsächliche Arbeitsweise Ihres Teams.",
+    "item2title": "WhatsApp & Messaging-Integrationen",
+    "item2desc": "Lassen Sie Gäste auf dem bevorzugten Weg mit Ihnen kommunizieren und automatisieren Sie sich wiederholende Abläufe — ohne die persönliche Note zu verlieren.",
+    "item3title": "Digitale In-Property-Tools",
+    "item3desc": "QR-Menüs, Gästeportale, Zimmerservice, lokale Guides und Upsell-Angebote — direkt auf das Smartphone Ihrer Gäste, ohne App-Download.",
+    "item4title": "Drittanbieter- & API-Integrationen",
+    "item4desc": "Verbinden Sie Ihre Website mit Buchungsmaschinen, Zahlungsgateways, Channel-Managern und jeder Plattform, die bereits in Ihrem Workflow ist."
+  },
+  "WhoWeServe": {
+    "eyebrow": "Mit wem wir arbeiten",
+    "heading": "Gebaut für zwei Arten von",
+    "headingEm": "Hospitality-Unternehmen.",
+    "hotelTitle": "Hotels & Resorts",
+    "hotelBody": "Ob Sie eine Boutique-Unterkunft oder ein Mehrstandort-Resort betreiben — wir bauen die digitale Infrastruktur, die Zimmer füllt und Gäste zurückbringt.",
+    "hotelImageAlt": "Fassade eines Luxus-Boutique-Hotels zur goldenen Stunde",
+    "hotelF0": "Direktbuchungsmaschine",
+    "hotelF1": "Gasterlebnis-Portal",
+    "hotelF2": "Digitale In-Room-Tools",
+    "hotelF3": "Personal-Management-Dashboard",
+    "hotelF4": "Channel-Manager-Integration",
+    "agencyTitle": "Reisebüros",
+    "agencyBody": "Von kleinen Betreibern bis zu mittelgroßen Agenturen mit Dutzenden von Agenten — wir bauen Tools, die Ihr Team schneller und Ihre Kunden zufriedener machen.",
+    "agencyImageAlt": "Modernes Reisebüro mit Weltkarte und Team bei der Arbeit",
+    "agencyF0": "Angebots- & Proposal-Generator",
+    "agencyF1": "Agenten-Operationsportal",
+    "agencyF2": "Kundenbeziehungs-Tools",
+    "agencyF3": "Reiserouten-Management",
+    "agencyF4": "WhatsApp & Lead-Automatisierung"
+  },
+  "Process": {
+    "eyebrow": "Wie wir zusammenarbeiten",
+    "heading": "Einfacher Prozess,",
+    "headingEm": "klare Ergebnisse.",
+    "item0title": "Erstgespräch",
+    "item0desc": "Wir hören zuerst zu. Ein Gespräch, um Ihren Betrieb, Ihre Ziele und die tatsächlichen Reibungspunkte zu verstehen.",
+    "item1title": "Definiertes Angebot",
+    "item1desc": "Ein klarer Plan — was wir bauen, wie lange es dauert, was es kostet. Keine vagen Schätzungen, keine versteckten Extras.",
+    "item2title": "Entwicklung & Launch",
+    "item2desc": "Wir entwerfen, entwickeln und übergeben. Sie erhalten ein funktionsfähiges Produkt, ein geschultes Team und laufenden Support."
+  },
+  "BeyondLaunch": {
+    "eyebrow": "Nach dem Launch",
+    "heading": "Wir verschwinden nicht",
+    "headingEm": "nach dem Go-live.",
+    "body": "Die meisten Agenturen übergeben die Schlüssel und ziehen weiter. Wir betrachten den Launch als den Beginn der Arbeit, nicht als das Ende.",
+    "item0title": "Monatliche Check-ins",
+    "item0desc": "Ein kurzes, strukturiertes Gespräch jeden Monat, um zu überprüfen, was funktioniert, was sich in Ihrem Unternehmen verändert hat und was auf der Website angepasst werden sollte.",
+    "item1title": "Performance-Monitoring",
+    "item1desc": "Wir verfolgen Ladezeiten, Buchungstrichter-Abbrüche und Mobilverhalten — und melden alles Auffällige, bevor Sie es selbst bemerken.",
+    "item2title": "Feedback-Schleifen",
+    "item2desc": "Ihr Team und Ihre Gäste nutzen die Website täglich. Wir sammeln diese Signale und verwandeln sie in konkrete Verbesserungen.",
+    "item3title": "Kontinuierliche Iterationen",
+    "item3desc": "Kleine, regelmäßige Verbesserungen — Textanpassungen, Geschwindigkeitsoptimierungen, neue Funktionen, während Ihr Unternehmen wächst."
+  },
+  "CTA": {
+    "eyebrow": "Lassen Sie uns zusammenarbeiten",
+    "heading": "Nicht sicher, wo Sie anfangen sollen?",
+    "headingEm": "Genau dafür reden wir zuerst.",
+    "body": "Keine Präsentationen, keine Standardvorschläge. Nur ein ehrliches Gespräch über Ihre spezifische Situation — und ob wir das richtige Team sind, um zu helfen.",
+    "cta1": "Kontakt aufnehmen",
+    "cta2": "WebbingHUB besuchen"
+  },
+  "Footer": {
+    "link": "webbinghub.io →"
+  }
+}
