@@ -3,10 +3,10 @@ import Image from "next/image";
 import { Nav } from "@/app/components/Nav";
 import { RevealObserver } from "@/app/components/RevealObserver";
 import { StatCounter } from "@/app/components/StatCounter";
-import heroBg from "@/app/assets/hero_bg.png";
-import hotelImg from "@/app/assets/hotel.png";
-import travelAgencyImg from "@/app/assets/travelagency.png";
-import beyondLaunchImg from "@/app/assets/beyond_launch.png";
+import heroBg from "@/app/assets/hero_bg.webp";
+import hotelImg from "@/app/assets/hotel.webp";
+import travelAgencyImg from "@/app/assets/travelagency.webp";
+import beyondLaunchImg from "@/app/assets/beyond_launch.webp";
 
 /* ─── SHARED STYLE TOKENS ───────────────────────────────────── */
 const eyebrow =
@@ -14,31 +14,74 @@ const eyebrow =
 
 /* ─── PAGE ──────────────────────────────────────────────────── */
 export default async function LocalePage() {
-  const [tHero, tStats, tProblems, tSolutions, tWho, tProcess, tBeyond, tCta, tFooter] =
-    await Promise.all([
-      getTranslations("Hero"),
-      getTranslations("Stats"),
-      getTranslations("Problems"),
-      getTranslations("Solutions"),
-      getTranslations("WhoWeServe"),
-      getTranslations("Process"),
-      getTranslations("BeyondLaunch"),
-      getTranslations("CTA"),
-      getTranslations("Footer"),
-    ]);
+  const [
+    tHero,
+    tStats,
+    tProblems,
+    tSolutions,
+    tWho,
+    tProcess,
+    tBeyond,
+    tCta,
+    tFooter,
+  ] = await Promise.all([
+    getTranslations("Hero"),
+    getTranslations("Stats"),
+    getTranslations("Problems"),
+    getTranslations("Solutions"),
+    getTranslations("WhoWeServe"),
+    getTranslations("Process"),
+    getTranslations("BeyondLaunch"),
+    getTranslations("CTA"),
+    getTranslations("Footer"),
+  ]);
 
   /* ─── DATA built from translations ─────────────────────── */
   const stats = [
-    { endNum: 25, startNum: 15, prefix: "15–", suffix: "%", label: tStats("label0") },
-    { endNum: 72, startNum: 0,  prefix: "",    suffix: "%", label: tStats("label1") },
-    { endNum: 8,  startNum: 0,  prefix: "< ",  suffix: "s", label: tStats("label2") },
+    {
+      endNum: 25,
+      startNum: 15,
+      prefix: "15–",
+      suffix: "%",
+      label: tStats("label0"),
+    },
+    {
+      endNum: 72,
+      startNum: 0,
+      prefix: "",
+      suffix: "%",
+      label: tStats("label1"),
+    },
+    {
+      endNum: 8,
+      startNum: 0,
+      prefix: "< ",
+      suffix: "s",
+      label: tStats("label2"),
+    },
   ];
 
   const problems = [
-    { number: "01", title: tProblems("item0title"), desc: tProblems("item0desc") },
-    { number: "02", title: tProblems("item1title"), desc: tProblems("item1desc") },
-    { number: "03", title: tProblems("item2title"), desc: tProblems("item2desc") },
-    { number: "04", title: tProblems("item3title"), desc: tProblems("item3desc") },
+    {
+      number: "01",
+      title: tProblems("item0title"),
+      desc: tProblems("item0desc"),
+    },
+    {
+      number: "02",
+      title: tProblems("item1title"),
+      desc: tProblems("item1desc"),
+    },
+    {
+      number: "03",
+      title: tProblems("item2title"),
+      desc: tProblems("item2desc"),
+    },
+    {
+      number: "04",
+      title: tProblems("item3title"),
+      desc: tProblems("item3desc"),
+    },
   ];
 
   const solutions = [
@@ -50,11 +93,19 @@ export default async function LocalePage() {
   ];
 
   const hotelFeatures = [
-    tWho("hotelF0"), tWho("hotelF1"), tWho("hotelF2"), tWho("hotelF3"), tWho("hotelF4"),
+    tWho("hotelF0"),
+    tWho("hotelF1"),
+    tWho("hotelF2"),
+    tWho("hotelF3"),
+    tWho("hotelF4"),
   ];
 
   const agencyFeatures = [
-    tWho("agencyF0"), tWho("agencyF1"), tWho("agencyF2"), tWho("agencyF3"), tWho("agencyF4"),
+    tWho("agencyF0"),
+    tWho("agencyF1"),
+    tWho("agencyF2"),
+    tWho("agencyF3"),
+    tWho("agencyF4"),
   ];
 
   const processSteps = [
@@ -236,7 +287,9 @@ export default async function LocalePage() {
                   <h3 className="font-display text-[1.3rem] font-semibold text-ink mb-3 leading-snug">
                     {p.title}
                   </h3>
-                  <p className="text-sm text-ink-mid leading-[1.75]">{p.desc}</p>
+                  <p className="text-sm text-ink-mid leading-[1.75]">
+                    {p.desc}
+                  </p>
                 </article>
               ))}
             </div>
@@ -259,21 +312,29 @@ export default async function LocalePage() {
 
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start relative z-10">
             <div>
-              <span className={`reveal ${eyebrow}`}>{tSolutions("eyebrow")}</span>
+              <span className={`reveal ${eyebrow}`}>
+                {tSolutions("eyebrow")}
+              </span>
               <h2
                 id="solutions-heading"
                 className="reveal font-display text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.08] text-cream mb-8"
               >
                 {tSolutions("heading")}
                 <br />
-                <em className="italic text-gold-light">{tSolutions("headingEm")}</em>
+                <em className="italic text-gold-light">
+                  {tSolutions("headingEm")}
+                </em>
               </h2>
               <p className="reveal text-[0.93rem] text-cream/72 leading-[1.8] max-w-sm">
                 {tSolutions("body")}
               </p>
             </div>
 
-            <ul className="flex flex-col gap-0" role="list" aria-label="Services">
+            <ul
+              className="flex flex-col gap-0"
+              role="list"
+              aria-label="Services"
+            >
               {solutions.map((s, i) => (
                 <li
                   key={s.title}
@@ -450,7 +511,9 @@ export default async function LocalePage() {
               >
                 {tProcess("heading")}
                 <br />
-                <em className="italic text-gold-light">{tProcess("headingEm")}</em>
+                <em className="italic text-gold-light">
+                  {tProcess("headingEm")}
+                </em>
               </h2>
             </div>
 
@@ -473,7 +536,9 @@ export default async function LocalePage() {
                   <h3 className="font-display text-xl font-semibold text-cream mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-cream/75 leading-[1.8]">{step.desc}</p>
+                  <p className="text-sm text-cream/75 leading-[1.8]">
+                    {step.desc}
+                  </p>
                 </li>
               ))}
             </ol>
@@ -537,7 +602,9 @@ export default async function LocalePage() {
                       <h3 className="font-display text-xl font-semibold text-cream mb-3">
                         {p.title}
                       </h3>
-                      <p className="text-sm text-cream/72 leading-relaxed">{p.desc}</p>
+                      <p className="text-sm text-cream/72 leading-relaxed">
+                        {p.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
