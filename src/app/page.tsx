@@ -3,6 +3,9 @@ import { Nav } from "@/app/components/Nav";
 import { RevealObserver } from "@/app/components/RevealObserver";
 import { StatCounter } from "@/app/components/StatCounter";
 import heroBg from "@/app/assets/hero_bg.png";
+import hotelImg from "@/app/assets/hotel.png";
+import travelAgencyImg from "@/app/assets/travelagency.png";
+import beyondLaunchImg from "@/app/assets/beyond_launch.png";
 
 /* ─── DATA ─────────────────────────────────────────────────── */
 
@@ -110,9 +113,33 @@ const processSteps = [
   },
 ];
 
+const pillars = [
+  {
+    num: "01",
+    title: "Monthly check-ins",
+    desc: "A short, structured call every month to review what's working, what's changed in your business, and what should be adjusted on the site.",
+  },
+  {
+    num: "02",
+    title: "Performance monitoring",
+    desc: "We track load times, booking funnel drop-offs, and mobile behaviour — and flag anything that needs attention before you even notice it.",
+  },
+  {
+    num: "03",
+    title: "Feedback loops",
+    desc: "Your team and your guests use the site daily. We collect that signal and turn it into concrete improvements.",
+  },
+  {
+    num: "04",
+    title: "Rolling iterations",
+    desc: "Small, continuous improvements shipped regularly — copy tweaks, speed optimisations, new features as your business evolves.",
+  },
+];
+
 /* ─── SHARED STYLE TOKENS ───────────────────────────────────── */
-// Eyebrow: used across all sections for consistency
-const eyebrow = "text-[0.68rem] tracking-[0.26em] uppercase text-gold/70 block mb-5";
+
+const eyebrow =
+  "text-[0.68rem] tracking-[0.26em] uppercase text-gold/70 block mb-5";
 
 /* ─── PAGE ──────────────────────────────────────────────────── */
 
@@ -129,7 +156,6 @@ export default function Home() {
           aria-label="Hero"
           className="relative min-h-svh flex flex-col items-center justify-center text-center px-6 overflow-hidden"
         >
-          {/* Background image */}
           <Image
             src={heroBg}
             alt=""
@@ -139,14 +165,10 @@ export default function Home() {
             quality={90}
             sizes="100vw"
           />
-
-          {/* Overlay: dark green gradient for readability */}
           <div
             className="absolute inset-0 bg-gradient-to-b from-green-dark/80 via-green-dark/55 to-green-dark/85"
             aria-hidden="true"
           />
-
-          {/* Subtle vignette */}
           <div
             className="absolute inset-0"
             style={{
@@ -156,7 +178,6 @@ export default function Home() {
             aria-hidden="true"
           />
 
-          {/* Content */}
           <div className="relative z-10 max-w-4xl mx-auto">
             <p
               className={`${eyebrow} mb-8`}
@@ -164,7 +185,6 @@ export default function Home() {
             >
               Web solutions for travel &amp; hospitality
             </p>
-
             <h1
               className="font-display text-[clamp(3rem,8vw,6.5rem)] font-light leading-[0.93] tracking-[-0.02em] text-cream mb-6"
               style={{ animation: "fadeUp 0.8s 0.4s both" }}
@@ -174,7 +194,6 @@ export default function Home() {
               as hard as{" "}
               <em className="italic text-gold-light">your team does.</em>
             </h1>
-
             <p
               className="font-display italic text-[clamp(1rem,2.2vw,1.35rem)] font-light text-cream/60 max-w-lg mx-auto mb-12 leading-[1.8]"
               style={{ animation: "fadeUp 0.8s 0.6s both" }}
@@ -182,7 +201,6 @@ export default function Home() {
               Custom booking sites and digital tools for travel agencies and
               hotels — built to convert visitors and simplify operations.
             </p>
-
             <div
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
               style={{ animation: "fadeUp 0.8s 0.8s both" }}
@@ -204,7 +222,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Scroll indicator */}
           <div
             className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3"
             style={{ animation: "fadeUp 0.8s 1.2s both" }}
@@ -222,11 +239,11 @@ export default function Home() {
 
         {/* ── STATS STRIP ──────────────────────────────────── */}
         <div
-          className="bg-green-dark border-y border-white/[0.08] py-10 px-6 md:px-16"
+          className="bg-green-dark border-y border-gold/[0.15] py-10 px-6 md:px-16"
           aria-label="Key statistics"
         >
           <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y divide-white/[0.15] sm:divide-y-0 sm:divide-x sm:divide-white/[0.22]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y divide-gold/20 sm:divide-y-0 sm:divide-x sm:divide-gold/30">
               {stats.map((s) => (
                 <div
                   key={s.endNum + s.prefix}
@@ -237,6 +254,7 @@ export default function Home() {
                     startNum={s.startNum}
                     prefix={s.prefix}
                     suffix={s.suffix}
+                    duration={1200}
                     className="font-display text-4xl md:text-5xl font-light text-gold block leading-none mb-2"
                   />
                   <p className="text-[0.72rem] tracking-[0.1em] uppercase text-cream/45 leading-[1.6]">
@@ -295,7 +313,6 @@ export default function Home() {
           aria-labelledby="solutions-heading"
           className="bg-green-dark py-28 px-6 md:px-16 relative overflow-hidden"
         >
-          {/* Watermark */}
           <span
             className="absolute font-display font-light text-white/[0.025] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap pointer-events-none select-none tracking-[0.08em] leading-none"
             style={{ fontSize: "clamp(8rem, 22vw, 20rem)" }}
@@ -305,7 +322,6 @@ export default function Home() {
           </span>
 
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start relative z-10">
-            {/* Left */}
             <div>
               <span className={`reveal ${eyebrow}`}>What we build</span>
               <h2
@@ -324,7 +340,6 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Right */}
             <ul className="flex flex-col gap-0" role="list" aria-label="Services">
               {solutions.map((s, i) => (
                 <li
@@ -371,97 +386,125 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Hotels card */}
-              <article className="reveal group relative bg-cream border border-cream-dark hover:border-green overflow-hidden p-10 transition-colors duration-300">
-                <span
-                  className="absolute font-display text-[7rem] font-light text-green/[0.05] bottom-0 right-4 leading-none pointer-events-none select-none"
-                  aria-hidden="true"
-                >
-                  H
-                </span>
-
-                <div className="w-10 h-10 border border-green rounded-full flex items-center justify-center mb-8">
-                  <svg
-                    className="w-[18px] h-[18px] stroke-green"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    strokeWidth="1.5"
-                    aria-hidden="true"
-                  >
-                    <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" />
-                  </svg>
+              <article className="reveal group relative bg-cream border border-cream-dark hover:border-green overflow-hidden transition-colors duration-300">
+                {/* Card image */}
+                <div className="relative w-full aspect-[3/2] overflow-hidden">
+                  <Image
+                    src={hotelImg}
+                    alt="Luxury boutique hotel exterior at golden hour"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
 
-                <h3 className="font-display text-2xl font-semibold text-ink mb-3">
-                  Hotels &amp; Resorts
-                </h3>
-                <p className="text-sm text-ink-mid leading-[1.8] mb-7 relative z-10">
-                  Whether you run a boutique property or a multi-location
-                  resort, we build the digital infrastructure that fills rooms
-                  and keeps guests coming back.
-                </p>
+                {/* Card content */}
+                <div className="relative p-10">
+                  <span
+                    className="absolute font-display text-[7rem] font-light text-green/[0.05] bottom-0 right-4 leading-none pointer-events-none select-none"
+                    aria-hidden="true"
+                  >
+                    H
+                  </span>
 
-                <ul className="flex flex-col gap-2" role="list">
-                  {hotelFeatures.map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-center gap-3 text-[0.82rem] text-green"
+                  <div className="w-10 h-10 border border-green rounded-full flex items-center justify-center mb-8">
+                    <svg
+                      className="w-[18px] h-[18px] stroke-green"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      strokeWidth="1.5"
+                      aria-hidden="true"
                     >
-                      <span
-                        className="w-3 h-px bg-green flex-shrink-0"
-                        aria-hidden="true"
-                      />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
+                      <path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" />
+                    </svg>
+                  </div>
+
+                  <h3 className="font-display text-2xl font-semibold text-ink mb-3">
+                    Hotels &amp; Resorts
+                  </h3>
+                  <p className="text-sm text-ink-mid leading-[1.8] mb-7 relative z-10">
+                    Whether you run a boutique property or a multi-location
+                    resort, we build the digital infrastructure that fills rooms
+                    and keeps guests coming back.
+                  </p>
+
+                  <ul className="flex flex-col gap-2" role="list">
+                    {hotelFeatures.map((f) => (
+                      <li
+                        key={f}
+                        className="flex items-center gap-3 text-[0.82rem] text-green"
+                      >
+                        <span
+                          className="w-3 h-px bg-green flex-shrink-0"
+                          aria-hidden="true"
+                        />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </article>
 
               {/* Travel agencies card */}
-              <article className="reveal group relative bg-cream border border-cream-dark hover:border-green overflow-hidden p-10 transition-colors duration-300">
-                <span
-                  className="absolute font-display text-[7rem] font-light text-green/[0.05] bottom-0 right-4 leading-none pointer-events-none select-none"
-                  aria-hidden="true"
-                >
-                  T
-                </span>
-
-                <div className="w-10 h-10 border border-green rounded-full flex items-center justify-center mb-8">
-                  <svg
-                    className="w-[18px] h-[18px] stroke-green"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    strokeWidth="1.5"
-                    aria-hidden="true"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                    <path d="M2 12h20" />
-                  </svg>
+              <article className="reveal group relative bg-cream border border-cream-dark hover:border-green overflow-hidden transition-colors duration-300">
+                {/* Card image */}
+                <div className="relative w-full aspect-[3/2] overflow-hidden">
+                  <Image
+                    src={travelAgencyImg}
+                    alt="Modern travel agency office with world map and team at work"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
 
-                <h3 className="font-display text-2xl font-semibold text-ink mb-3">
-                  Travel Agencies
-                </h3>
-                <p className="text-sm text-ink-mid leading-[1.8] mb-7 relative z-10">
-                  From boutique operators to mid-size agencies managing dozens
-                  of agents — we build tools that make your team faster and
-                  your clients more satisfied.
-                </p>
+                {/* Card content */}
+                <div className="relative p-10">
+                  <span
+                    className="absolute font-display text-[7rem] font-light text-green/[0.05] bottom-0 right-4 leading-none pointer-events-none select-none"
+                    aria-hidden="true"
+                  >
+                    T
+                  </span>
 
-                <ul className="flex flex-col gap-2" role="list">
-                  {agencyFeatures.map((f) => (
-                    <li
-                      key={f}
-                      className="flex items-center gap-3 text-[0.82rem] text-green"
+                  <div className="w-10 h-10 border border-green rounded-full flex items-center justify-center mb-8">
+                    <svg
+                      className="w-[18px] h-[18px] stroke-green"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      strokeWidth="1.5"
+                      aria-hidden="true"
                     >
-                      <span
-                        className="w-3 h-px bg-green flex-shrink-0"
-                        aria-hidden="true"
-                      />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                      <path d="M2 12h20" />
+                    </svg>
+                  </div>
+
+                  <h3 className="font-display text-2xl font-semibold text-ink mb-3">
+                    Travel Agencies
+                  </h3>
+                  <p className="text-sm text-ink-mid leading-[1.8] mb-7 relative z-10">
+                    From boutique operators to mid-size agencies managing dozens
+                    of agents — we build tools that make your team faster and
+                    your clients more satisfied.
+                  </p>
+
+                  <ul className="flex flex-col gap-2" role="list">
+                    {agencyFeatures.map((f) => (
+                      <li
+                        key={f}
+                        className="flex items-center gap-3 text-[0.82rem] text-green"
+                      >
+                        <span
+                          className="w-3 h-px bg-green flex-shrink-0"
+                          aria-hidden="true"
+                        />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </article>
             </div>
           </div>
@@ -514,13 +557,90 @@ export default function Home() {
           </div>
         </section>
 
+        {/* ── BEYOND LAUNCH ────────────────────────────────── */}
+        <section
+          id="beyond-launch"
+          aria-labelledby="beyond-launch-heading"
+          className="bg-green-dark py-28 px-6 md:px-16 relative overflow-hidden"
+        >
+          {/* Background image — very subtle texture */}
+          <Image
+            src={beyondLaunchImg}
+            alt=""
+            fill
+            className="object-cover opacity-[0.07] mix-blend-multiply"
+            aria-hidden="true"
+            sizes="100vw"
+          />
+
+          <div className="relative z-10 max-w-6xl mx-auto">
+            {/* Header */}
+            <span className={`reveal ${eyebrow}`}>Beyond launch</span>
+            <h2
+              id="beyond-launch-heading"
+              className="reveal font-display text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.08] text-cream mb-6 max-w-xl"
+            >
+              We don&apos;t disappear
+              <br />
+              <em className="italic text-gold">after go-live.</em>
+            </h2>
+            <p className="reveal text-[0.93rem] text-cream/60 max-w-xl mb-20 leading-[1.8]">
+              Most agencies hand over the keys and move on. We treat launch as
+              the beginning of the work, not the end.
+            </p>
+
+            {/* 4-pillar layout */}
+            <div className="relative">
+              {/* Connecting line — desktop only */}
+              <div
+                className="hidden md:block absolute top-0 inset-x-0 h-px bg-gold/25"
+                aria-hidden="true"
+              />
+
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-0">
+                {pillars.map((p, i) => (
+                  <div
+                    key={p.num}
+                    className="reveal group relative pt-0 md:pt-10 md:px-8 first:md:pl-0 last:md:pr-0 border-t border-gold/20 md:border-0 first:border-0 md:first:border-0"
+                    style={{ transitionDelay: `${(i + 1) * 0.1}s` }}
+                  >
+                    {/* Gold dot sitting on the line — desktop only */}
+                    <div
+                      className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-gold group-hover:scale-125 transition-all duration-300"
+                      aria-hidden="true"
+                    />
+
+                    {/* Mobile: small top spacing instead of line */}
+                    <div className="pt-8 md:pt-0">
+                      {/* Decorative number */}
+                      <span
+                        className="font-display text-7xl md:text-8xl font-light text-gold/15 group-hover:text-gold/35 transition-all duration-300 leading-none block mb-3"
+                        aria-hidden="true"
+                      >
+                        {p.num}
+                      </span>
+
+                      <h3 className="font-display text-xl font-semibold text-cream mb-3">
+                        {p.title}
+                      </h3>
+                      <p className="text-sm text-cream/55 leading-relaxed">
+                        {p.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── CTA ──────────────────────────────────────────── */}
         <section
           id="contact"
           aria-labelledby="cta-heading"
           className="bg-green-dark py-44 px-6 md:px-16 text-center relative overflow-hidden"
         >
-          {/* SVG dot-grid background pattern at ~5% opacity */}
+          {/* SVG dot-grid background pattern */}
           <svg
             className="absolute inset-0 w-full h-full opacity-[0.045] pointer-events-none"
             aria-hidden="true"
