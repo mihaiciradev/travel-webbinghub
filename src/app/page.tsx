@@ -1,21 +1,31 @@
 import Image from "next/image";
 import { Nav } from "@/app/components/Nav";
 import { RevealObserver } from "@/app/components/RevealObserver";
+import { StatCounter } from "@/app/components/StatCounter";
 import heroBg from "@/app/assets/hero_bg.png";
 
 /* ─── DATA ─────────────────────────────────────────────────── */
 
 const stats = [
   {
-    value: "15–25%",
+    endNum: 25,
+    startNum: 15,
+    prefix: "15–",
+    suffix: "%",
     label: "average OTA commission lost per booking",
   },
   {
-    value: "72%",
+    endNum: 72,
+    startNum: 0,
+    prefix: "",
+    suffix: "%",
     label: "of travel searches start on a phone",
   },
   {
-    value: "< 8s",
+    endNum: 8,
+    startNum: 0,
+    prefix: "< ",
+    suffix: "s",
     label: "before a visitor leaves a slow website",
   },
 ];
@@ -100,47 +110,9 @@ const processSteps = [
   },
 ];
 
-/* ─── PLACEHOLDER IMAGE COMPONENT ──────────────────────────── */
-
-function PlaceholderImg({
-  className,
-  hint,
-  label,
-}: {
-  className?: string;
-  hint: string;
-  label: string;
-}) {
-  return (
-    <div
-      className={`relative flex flex-col items-center justify-center overflow-hidden bg-cream-dark/60 border border-cream-dark ${className}`}
-      role="img"
-      aria-label={label}
-      title={`Higgsfield suggestion: ${hint}`}
-    >
-      {/* Dashed border inset */}
-      <div className="absolute inset-3 border border-dashed border-green/20 pointer-events-none" />
-      {/* Camera icon */}
-      <svg
-        className="w-8 h-8 text-green/25 mb-3"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        aria-hidden="true"
-      >
-        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-        <circle cx="12" cy="13" r="4" />
-      </svg>
-      <p className="text-xs text-green/35 text-center px-6 leading-relaxed max-w-[240px]">
-        {label}
-      </p>
-      <p className="mt-2 text-[0.6rem] tracking-widest uppercase text-green/25">
-        Image placeholder
-      </p>
-    </div>
-  );
-}
+/* ─── SHARED STYLE TOKENS ───────────────────────────────────── */
+// Eyebrow: used across all sections for consistency
+const eyebrow = "text-[0.68rem] tracking-[0.26em] uppercase text-gold/70 block mb-5";
 
 /* ─── PAGE ──────────────────────────────────────────────────── */
 
@@ -187,7 +159,7 @@ export default function Home() {
           {/* Content */}
           <div className="relative z-10 max-w-4xl mx-auto">
             <p
-              className="text-[0.7rem] tracking-[0.28em] uppercase text-gold mb-8"
+              className={`${eyebrow} mb-8`}
               style={{ animation: "fadeUp 0.8s 0.2s both" }}
             >
               Web solutions for travel &amp; hospitality
@@ -204,7 +176,7 @@ export default function Home() {
             </h1>
 
             <p
-              className="font-display italic text-[clamp(1rem,2.2vw,1.35rem)] font-light text-cream/60 max-w-lg mx-auto mb-12 leading-relaxed"
+              className="font-display italic text-[clamp(1rem,2.2vw,1.35rem)] font-light text-cream/60 max-w-lg mx-auto mb-12 leading-[1.8]"
               style={{ animation: "fadeUp 0.8s 0.6s both" }}
             >
               Custom booking sites and digital tools for travel agencies and
@@ -250,20 +222,29 @@ export default function Home() {
 
         {/* ── STATS STRIP ──────────────────────────────────── */}
         <div
-          className="bg-green-dark border-y border-white/[0.06] py-10 px-6 md:px-16"
+          className="bg-green-dark border-y border-white/[0.08] py-10 px-6 md:px-16"
           aria-label="Key statistics"
         >
-          <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 sm:divide-x sm:divide-white/10">
-            {stats.map((s) => (
-              <div key={s.value} className="sm:px-10 first:pl-0 last:pr-0">
-                <span className="font-display text-4xl md:text-5xl font-light text-gold block leading-none mb-2">
-                  {s.value}
-                </span>
-                <p className="text-[0.72rem] tracking-[0.1em] uppercase text-cream/45 leading-relaxed">
-                  {s.label}
-                </p>
-              </div>
-            ))}
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y divide-white/[0.15] sm:divide-y-0 sm:divide-x sm:divide-white/[0.22]">
+              {stats.map((s) => (
+                <div
+                  key={s.endNum + s.prefix}
+                  className="py-8 sm:py-0 sm:px-10 first:pt-0 last:pb-0 sm:first:pl-0 sm:last:pr-0"
+                >
+                  <StatCounter
+                    endNum={s.endNum}
+                    startNum={s.startNum}
+                    prefix={s.prefix}
+                    suffix={s.suffix}
+                    className="font-display text-4xl md:text-5xl font-light text-gold block leading-none mb-2"
+                  />
+                  <p className="text-[0.72rem] tracking-[0.1em] uppercase text-cream/45 leading-[1.6]">
+                    {s.label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -274,7 +255,7 @@ export default function Home() {
           className="bg-cream py-28 px-6 md:px-16"
         >
           <div className="max-w-6xl mx-auto">
-            <span className="reveal text-[0.68rem] tracking-[0.26em] uppercase text-green block mb-5">
+            <span className={`reveal ${eyebrow}`}>
               The real cost of a bad website
             </span>
             <h2
@@ -290,9 +271,8 @@ export default function Home() {
               {problems.map((p) => (
                 <article
                   key={p.number}
-                  className="problem-card group bg-cream hover:bg-[#f0ebe3] p-10 relative transition-colors duration-300"
+                  className="group bg-cream hover:bg-green-dark/[0.06] border-l-2 border-gold/30 hover:border-gold p-10 relative transition-colors duration-300"
                 >
-                  <div className="problem-accent" aria-hidden="true" />
                   <span
                     className="font-display text-[5rem] font-light text-cream-dark leading-none block mb-5"
                     aria-hidden="true"
@@ -327,9 +307,7 @@ export default function Home() {
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start relative z-10">
             {/* Left */}
             <div>
-              <span className="reveal text-[0.68rem] tracking-[0.26em] uppercase text-gold block mb-5">
-                What we build
-              </span>
+              <span className={`reveal ${eyebrow}`}>What we build</span>
               <h2
                 id="solutions-heading"
                 className="reveal font-display text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.08] text-cream mb-8"
@@ -338,7 +316,7 @@ export default function Home() {
                 <br />
                 <em className="italic text-gold-light">your business.</em>
               </h2>
-              <p className="reveal text-[0.93rem] text-cream/60 leading-[1.85] max-w-sm">
+              <p className="reveal text-[0.93rem] text-cream/60 leading-[1.8] max-w-sm">
                 We build custom websites and internal tools for travel agencies
                 and hotels — focused on two things: turning more visitors into
                 bookings, and making your team&apos;s daily work faster and less
@@ -362,73 +340,13 @@ export default function Home() {
                     <strong className="block text-[0.93rem] font-medium text-cream mb-1">
                       {s.title}
                     </strong>
-                    <span className="text-[0.84rem] text-cream/50 leading-relaxed">
+                    <span className="text-[0.84rem] text-cream/50 leading-[1.8]">
                       {s.desc}
                     </span>
                   </div>
                 </li>
               ))}
             </ul>
-          </div>
-        </section>
-
-        {/* ── SHOWCASE (placeholder images) ────────────────── */}
-        <section
-          id="showcase"
-          aria-labelledby="showcase-heading"
-          className="bg-cream py-28 px-6 md:px-16"
-        >
-          <div className="max-w-6xl mx-auto">
-            <span className="reveal text-[0.68rem] tracking-[0.26em] uppercase text-green block mb-5">
-              What it looks like in practice
-            </span>
-            <h2
-              id="showcase-heading"
-              className="reveal font-display text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.08] text-ink mb-16 max-w-xl"
-            >
-              Designed to impress
-              <br />
-              <em className="italic text-green">guests and clients alike.</em>
-            </h2>
-
-            {/* Main showcase image — full width */}
-            <div className="reveal mb-6">
-              <PlaceholderImg
-                className="w-full aspect-[16/7] rounded-sm"
-                label="Hotel website displayed on laptop and mobile — booking engine homepage"
-                hint="Luxury boutique hotel website on MacBook Pro and iPhone, photorealistic product mockup, warm cinematic lighting, clean minimal design"
-              />
-            </div>
-
-            {/* Two smaller images side-by-side */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="reveal" style={{ transitionDelay: "0.1s" }}>
-                <PlaceholderImg
-                  className="w-full aspect-[4/3] rounded-sm"
-                  label="Travel agency agent dashboard — reservations and quotes management interface"
-                  hint="Travel agency operations dashboard on desktop monitor, modern UI with calendar, booking management, and client profiles, dark green and white theme"
-                />
-                <p className="mt-4 text-sm text-ink-mid">
-                  <strong className="font-medium text-ink">
-                    Agent operations dashboard
-                  </strong>{" "}
-                  — quotes, reservations, and client files in one place.
-                </p>
-              </div>
-              <div className="reveal" style={{ transitionDelay: "0.18s" }}>
-                <PlaceholderImg
-                  className="w-full aspect-[4/3] rounded-sm"
-                  label="Hotel guest portal on smartphone — digital room service and local guide"
-                  hint="Hotel guest on smartphone using digital room service app, modern hotel room background, warm ambient lighting, high resolution"
-                />
-                <p className="mt-4 text-sm text-ink-mid">
-                  <strong className="font-medium text-ink">
-                    Guest experience portal
-                  </strong>{" "}
-                  — room service, local guides, and upsells on any device.
-                </p>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -440,9 +358,7 @@ export default function Home() {
         >
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <span className="reveal text-[0.68rem] tracking-[0.26em] uppercase text-green block mb-5">
-                Who we work with
-              </span>
+              <span className={`reveal ${eyebrow}`}>Who we work with</span>
               <h2
                 id="who-heading"
                 className="reveal font-display text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.08] text-ink mx-auto max-w-md"
@@ -478,7 +394,7 @@ export default function Home() {
                 <h3 className="font-display text-2xl font-semibold text-ink mb-3">
                   Hotels &amp; Resorts
                 </h3>
-                <p className="text-sm text-ink-mid leading-[1.75] mb-7 relative z-10">
+                <p className="text-sm text-ink-mid leading-[1.8] mb-7 relative z-10">
                   Whether you run a boutique property or a multi-location
                   resort, we build the digital infrastructure that fills rooms
                   and keeps guests coming back.
@@ -526,7 +442,7 @@ export default function Home() {
                 <h3 className="font-display text-2xl font-semibold text-ink mb-3">
                   Travel Agencies
                 </h3>
-                <p className="text-sm text-ink-mid leading-[1.75] mb-7 relative z-10">
+                <p className="text-sm text-ink-mid leading-[1.8] mb-7 relative z-10">
                   From boutique operators to mid-size agencies managing dozens
                   of agents — we build tools that make your team faster and
                   your clients more satisfied.
@@ -559,9 +475,7 @@ export default function Home() {
         >
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <span className="reveal text-[0.68rem] tracking-[0.26em] uppercase text-gold block mb-5">
-                How we work together
-              </span>
+              <span className={`reveal ${eyebrow}`}>How we work together</span>
               <h2
                 id="process-heading"
                 className="reveal font-display text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.08] text-cream"
@@ -591,7 +505,7 @@ export default function Home() {
                   <h3 className="font-display text-xl font-semibold text-cream mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-cream/55 leading-relaxed">
+                  <p className="text-sm text-cream/55 leading-[1.8]">
                     {step.desc}
                   </p>
                 </li>
@@ -604,22 +518,41 @@ export default function Home() {
         <section
           id="contact"
           aria-labelledby="cta-heading"
-          className="bg-green-dark py-36 px-6 md:px-16 text-center relative overflow-hidden"
+          className="bg-green-dark py-44 px-6 md:px-16 text-center relative overflow-hidden"
         >
+          {/* SVG dot-grid background pattern at ~5% opacity */}
+          <svg
+            className="absolute inset-0 w-full h-full opacity-[0.045] pointer-events-none"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <pattern
+                id="cta-dot-grid"
+                x="0"
+                y="0"
+                width="22"
+                height="22"
+                patternUnits="userSpaceOnUse"
+              >
+                <circle cx="1.5" cy="1.5" r="1.5" fill="#f7f3ee" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#cta-dot-grid)" />
+          </svg>
+
           {/* Decorative rings */}
           <div
             className="absolute inset-0 flex items-center justify-center pointer-events-none"
             aria-hidden="true"
           >
-            <div className="w-[500px] h-[500px] rounded-full border border-white/[0.04] absolute" />
-            <div className="w-[750px] h-[750px] rounded-full border border-white/[0.025] absolute" />
-            <div className="w-[1000px] h-[1000px] rounded-full border border-white/[0.015] absolute" />
+            <div className="w-[500px] h-[500px] rounded-full border border-white/[0.05] absolute" />
+            <div className="w-[780px] h-[780px] rounded-full border border-white/[0.03] absolute" />
+            <div className="w-[1060px] h-[1060px] rounded-full border border-white/[0.018] absolute" />
           </div>
 
           <div className="relative z-10 max-w-2xl mx-auto">
-            <span className="reveal text-[0.68rem] tracking-[0.26em] uppercase text-gold block mb-6">
-              Let&apos;s work together
-            </span>
+            <span className={`reveal ${eyebrow}`}>Let&apos;s work together</span>
             <h2
               id="cta-heading"
               className="reveal font-display text-[clamp(2.2rem,6vw,4rem)] font-light leading-[1.08] text-cream mb-6"
@@ -630,7 +563,7 @@ export default function Home() {
                 That&apos;s exactly why we talk first.
               </em>
             </h2>
-            <p className="reveal text-[0.93rem] text-cream/55 max-w-md mx-auto mb-12 leading-[1.8]">
+            <p className="reveal text-[0.93rem] text-cream/55 max-w-md mx-auto mb-14 leading-[1.8]">
               No presentations, no off-the-shelf proposals. Just an honest
               conversation about your specific situation — and whether
               we&apos;re the right team to help.

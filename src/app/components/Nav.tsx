@@ -36,14 +36,15 @@ export function Nav() {
         href="https://webbinghub.io"
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center gap-3 text-[0.72rem] tracking-[0.14em] uppercase text-cream/60 hover:text-cream transition-colors duration-200"
+        className="flex items-center gap-2.5 text-[0.65rem] sm:text-[0.72rem] tracking-[0.12em] sm:tracking-[0.14em] uppercase text-cream/60 hover:text-cream transition-colors duration-200 whitespace-nowrap"
         aria-label="Visit WebbingHUB main website (opens in new tab)"
       >
         <span
-          className="w-5 h-px bg-gold flex-shrink-0"
+          className="hidden sm:block w-5 h-px bg-gold flex-shrink-0"
           aria-hidden="true"
         />
-        Visit WebbingHUB
+        <span className="sm:hidden">WebbingHUB</span>
+        <span className="hidden sm:inline">Visit WebbingHUB</span>
       </a>
     </header>
   );

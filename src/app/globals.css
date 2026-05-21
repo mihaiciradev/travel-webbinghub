@@ -52,18 +52,3 @@ body {
   50%       { opacity: 1;   transform: translateY(6px); }
 }
 
-/* Problem card accent bar */
-.problem-accent {
-  position: absolute;
-  inset-block: 0;
-  left: 0;
-  width: 3px;
-  background: #477B57;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.45s cubic-bezier(0.21, 0.47, 0.32, 0.98);
-}
-
-.problem-card:hover .problem-accent {
-  transform: scaleY(1);
-}
