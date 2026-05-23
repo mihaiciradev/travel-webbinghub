@@ -183,8 +183,8 @@ export default async function LocalePage() {
               >
                 {tHero("title1")}
                 <br />
+                {tHero("title2")}{" "}
                 <span className="relative whitespace-nowrap">
-                  {tHero("title2")}{" "}
                   <em className="italic text-gold-light drop-shadow-lg">{tHero("titleEm")}</em>
                   <span
                     className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"
