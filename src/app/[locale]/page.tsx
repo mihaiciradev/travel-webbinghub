@@ -7,6 +7,7 @@ import heroBg from "@/app/assets/hero_bg.webp";
 import hotelImg from "@/app/assets/hotel.webp";
 import travelAgencyImg from "@/app/assets/travelagency.webp";
 import beyondLaunchImg from "@/app/assets/beyond_launch.webp";
+import logoWebbingHub from "@/app/assets/logo_webbinghub.svg";
 
 /* ─── SHARED STYLE TOKENS ───────────────────────────────────── */
 const eyebrow =
@@ -150,14 +151,14 @@ export default async function LocalePage() {
             sizes="100vw"
           />
           <div
-            className="absolute inset-0 bg-gradient-to-b from-green-dark/80 via-green-dark/55 to-green-dark/85"
+            className="absolute inset-0 bg-gradient-to-b from-green-dark/85 via-green-dark/60 to-green-dark/90"
             aria-hidden="true"
           />
           <div
             className="absolute inset-0"
             style={{
               background:
-                "radial-gradient(ellipse at center, transparent 40%, rgba(46,82,57,0.55) 100%)",
+                "radial-gradient(ellipse at center, transparent 30%, rgba(20,40,28,0.7) 100%)",
             }}
             aria-hidden="true"
           />
@@ -167,23 +168,32 @@ export default async function LocalePage() {
             className="relative z-10 flex-none flex justify-center pt-[5.5rem] pb-0 px-6"
             style={{ animation: "fadeUp 0.8s 0.2s both" }}
           >
-            <p className={eyebrow}>{tHero("eyebrow")}</p>
+            <div className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-gold/10 border border-gold/30 hover:border-gold/50 transition-colors">
+              <span className="w-2 h-2 rounded-full bg-gold animate-pulse" aria-hidden="true" />
+              <p className="text-[0.65rem] tracking-[0.2em] uppercase text-gold/80">{tHero("eyebrow")}</p>
+            </div>
           </div>
 
           {/* Zone 2 — main content, centres itself in all remaining space */}
           <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-6 py-8">
             <div className="max-w-4xl mx-auto w-full">
               <h1
-                className="font-display text-[clamp(3rem,8vw,6.5rem)] font-light leading-[0.93] tracking-[-0.02em] text-cream mb-6"
+                className="font-display text-[clamp(3.2rem,9vw,7rem)] font-light leading-[0.92] tracking-[-0.03em] text-cream mb-8"
                 style={{ animation: "fadeUp 0.8s 0.4s both" }}
               >
                 {tHero("title1")}
                 <br />
-                {tHero("title2")}{" "}
-                <em className="italic text-gold-light">{tHero("titleEm")}</em>
+                <span className="relative">
+                  {tHero("title2")}{" "}
+                  <em className="italic text-gold-light drop-shadow-lg">{tHero("titleEm")}</em>
+                  <span
+                    className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60"
+                    aria-hidden="true"
+                  />
+                </span>
               </h1>
               <p
-                className="font-sans text-[clamp(0.95rem,1.8vw,1.1rem)] font-light text-cream/90 max-w-xl mx-auto mb-12 leading-[1.85] tracking-[0.01em]"
+                className="font-sans text-[clamp(1rem,2vw,1.15rem)] font-light text-cream/85 max-w-2xl mx-auto mb-12 leading-[1.8] tracking-[0.005em]"
                 style={{ animation: "fadeUp 0.8s 0.6s both" }}
               >
                 {tHero("subtitle")}
@@ -194,17 +204,18 @@ export default async function LocalePage() {
               >
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-3 px-8 py-4 border border-gold text-gold text-[0.75rem] tracking-[0.15em] uppercase hover:bg-gold hover:text-green-dark transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                  className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gold to-gold-light text-green-dark text-[0.8rem] font-semibold tracking-[0.1em] uppercase rounded-lg hover:shadow-[0_20px_40px_rgba(212,175,55,0.3)] hover:scale-105 transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                   aria-label="Start a conversation with WebbingHUB TRAVEL"
                 >
                   {tHero("cta1")}
-                  <span aria-hidden="true">→</span>
+                  <span className="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
                 </a>
                 <a
                   href="#what-we-build"
-                  className="inline-flex items-center gap-3 px-8 py-4 border border-cream/30 text-cream/80 text-[0.75rem] tracking-[0.15em] uppercase hover:border-cream/55 hover:text-cream transition-all duration-300"
+                  className="group inline-flex items-center gap-3 px-8 py-4 border-2 border-cream/40 text-cream/90 text-[0.8rem] font-semibold tracking-[0.1em] uppercase rounded-lg hover:border-gold hover:text-gold hover:bg-white/5 transition-all duration-300 backdrop-blur-sm"
                 >
                   {tHero("cta2")}
+                  <span className="group-hover:translate-x-1 transition-transform" aria-hidden="true">↓</span>
                 </a>
               </div>
             </div>
@@ -216,11 +227,11 @@ export default async function LocalePage() {
             style={{ animation: "fadeUp 0.8s 1.2s both" }}
             aria-hidden="true"
           >
-            <span className="text-[0.58rem] tracking-[0.22em] uppercase text-cream/40">
+            <span className="text-[0.58rem] tracking-[0.22em] uppercase text-cream/50">
               {tHero("scroll")}
             </span>
             <div
-              className="w-px h-8 bg-gradient-to-b from-gold/60 to-transparent"
+              className="w-px h-8 bg-gradient-to-b from-gold to-transparent"
               style={{ animation: "scrollDrop 2s 1.6s infinite" }}
             />
           </div>
@@ -228,27 +239,29 @@ export default async function LocalePage() {
 
         {/* ── STATS STRIP ──────────────────────────────────── */}
         <div
-          className="bg-green-dark border-y border-gold/[0.15] py-10 px-6 md:px-16"
+          className="bg-gradient-to-r from-green-dark via-green-dark/95 to-green-dark border-y border-gold/20 py-12 px-6 md:px-16 backdrop-blur-sm"
           aria-label="Key statistics"
         >
           <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y divide-gold/20 sm:divide-y-0 sm:divide-x sm:divide-gold/30">
-              {stats.map((s) => (
+            <div className="grid grid-cols-1 sm:grid-cols-3 divide-y divide-gold/20 sm:divide-y-0 sm:divide-x sm:divide-gold/25 gap-0">
+              {stats.map((s, idx) => (
                 <div
                   key={s.endNum + s.prefix}
-                  className="py-8 sm:py-0 sm:px-10 first:pt-0 last:pb-0 sm:first:pl-0 sm:last:pr-0"
+                  className="group py-10 sm:py-0 sm:px-12 first:pt-0 last:pb-0 sm:first:pl-0 sm:last:pr-0 hover:bg-white/[0.02] transition-colors duration-300"
                 >
-                  <StatCounter
-                    endNum={s.endNum}
-                    startNum={s.startNum}
-                    prefix={s.prefix}
-                    suffix={s.suffix}
-                    duration={1200}
-                    className="font-display text-4xl md:text-5xl font-light text-gold block leading-none mb-2"
-                  />
-                  <p className="text-[0.72rem] tracking-[0.1em] uppercase text-cream/60 leading-[1.6]">
-                    {s.label}
-                  </p>
+                  <div className="text-center">
+                    <StatCounter
+                      endNum={s.endNum}
+                      startNum={s.startNum}
+                      prefix={s.prefix}
+                      suffix={s.suffix}
+                      duration={1200}
+                      className="font-display text-5xl md:text-6xl font-light text-gold block leading-none mb-3 group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <p className="text-[0.75rem] tracking-[0.12em] uppercase text-cream/65 leading-relaxed font-medium">
+                      {s.label}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -338,20 +351,26 @@ export default async function LocalePage() {
               {solutions.map((s, i) => (
                 <li
                   key={s.title}
-                  className="reveal flex gap-5 items-start py-7 border-b border-white/[0.07] last:border-0"
+                  className="reveal group flex gap-5 items-start py-8 px-5 border-b border-white/10 last:border-0 hover:bg-white/[0.05] rounded-lg transition-all duration-300 cursor-pointer"
                   style={{ transitionDelay: `${i * 0.08}s` }}
                 >
                   <div
-                    className="w-1.5 h-1.5 rounded-full bg-gold mt-2 flex-shrink-0"
+                    className="w-2 h-2 rounded-full bg-gradient-to-b from-gold to-gold-light mt-2 flex-shrink-0 group-hover:scale-150 transition-transform duration-300"
                     aria-hidden="true"
                   />
-                  <div>
-                    <strong className="block text-[0.93rem] font-medium text-cream mb-1">
+                  <div className="flex-1">
+                    <strong className="block text-[0.95rem] font-semibold text-cream mb-2 group-hover:text-gold-light transition-colors">
                       {s.title}
                     </strong>
-                    <span className="text-[0.84rem] text-cream/65 leading-[1.8]">
+                    <span className="text-[0.85rem] text-cream/70 leading-[1.7] group-hover:text-cream/80 transition-colors">
                       {s.desc}
                     </span>
+                  </div>
+                  <div
+                    className="w-6 h-6 opacity-0 group-hover:opacity-100 flex items-center justify-center text-gold flex-shrink-0 transition-opacity duration-300"
+                    aria-hidden="true"
+                  >
+                    →
                   </div>
                 </li>
               ))}
@@ -378,30 +397,31 @@ export default async function LocalePage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Hotels card */}
-              <article className="reveal group relative bg-cream border border-cream-dark hover:border-green overflow-hidden transition-colors duration-300">
+              <article className="reveal group relative bg-cream border border-cream-dark hover:border-gold/40 overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:scale-105">
                 <div className="relative w-full aspect-[3/2] overflow-hidden">
                   <Image
                     src={hotelImg}
                     alt={tWho("hotelImageAlt")}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                 </div>
 
                 <div className="relative p-10">
                   <span
-                    className="absolute font-display text-[7rem] font-light text-green/[0.05] bottom-0 right-4 leading-none pointer-events-none select-none"
+                    className="absolute font-display text-[8rem] font-light text-green/[0.08] -bottom-4 -right-2 leading-none pointer-events-none select-none group-hover:text-gold/5 transition-colors duration-300"
                     aria-hidden="true"
                   >
                     H
                   </span>
 
-                  <div className="w-10 h-10 border border-green rounded-full flex items-center justify-center mb-8">
+                  <div className="w-12 h-12 border-2 border-green rounded-full flex items-center justify-center mb-8 group-hover:border-gold group-hover:bg-gold/5 transition-all duration-300">
                     <svg
-                      className="w-[18px] h-[18px] stroke-green"
+                      className="w-[20px] h-[20px] stroke-green group-hover:stroke-gold transition-colors duration-300"
                       viewBox="0 0 24 24"
                       fill="none"
                       strokeWidth="1.5"
@@ -411,21 +431,22 @@ export default async function LocalePage() {
                     </svg>
                   </div>
 
-                  <h3 className="font-display text-2xl font-semibold text-ink mb-3">
+                  <h3 className="font-display text-2xl font-semibold text-ink mb-3 group-hover:text-green transition-colors">
                     {tWho("hotelTitle")}
                   </h3>
                   <p className="text-sm text-ink-mid leading-[1.8] mb-7 relative z-10">
                     {tWho("hotelBody")}
                   </p>
 
-                  <ul className="flex flex-col gap-2" role="list">
-                    {hotelFeatures.map((f) => (
+                  <ul className="flex flex-col gap-3" role="list">
+                    {hotelFeatures.map((f, idx) => (
                       <li
                         key={f}
-                        className="flex items-center gap-3 text-[0.82rem] text-green"
+                        className="flex items-center gap-3 text-[0.85rem] text-green font-medium transition-all duration-300"
+                        style={{ transitionDelay: `${idx * 50}ms` }}
                       >
                         <span
-                          className="w-3 h-px bg-green flex-shrink-0"
+                          className="w-4 h-px bg-gradient-to-r from-green to-green/30 flex-shrink-0 group-hover:w-6 transition-all duration-300"
                           aria-hidden="true"
                         />
                         {f}
@@ -436,28 +457,29 @@ export default async function LocalePage() {
               </article>
 
               {/* Travel agencies card */}
-              <article className="reveal group relative bg-cream border border-cream-dark hover:border-green overflow-hidden transition-colors duration-300">
+              <article className="reveal group relative bg-cream border border-cream-dark hover:border-gold/40 overflow-hidden transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:scale-105">
                 <div className="relative w-full aspect-[3/2] overflow-hidden">
                   <Image
                     src={travelAgencyImg}
                     alt={tWho("agencyImageAlt")}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
                 </div>
 
                 <div className="relative p-10">
                   <span
-                    className="absolute font-display text-[7rem] font-light text-green/[0.05] bottom-0 right-4 leading-none pointer-events-none select-none"
+                    className="absolute font-display text-[8rem] font-light text-green/[0.08] -bottom-4 -right-2 leading-none pointer-events-none select-none group-hover:text-gold/5 transition-colors duration-300"
                     aria-hidden="true"
                   >
                     T
                   </span>
 
-                  <div className="w-10 h-10 border border-green rounded-full flex items-center justify-center mb-8">
+                  <div className="w-12 h-12 border-2 border-green rounded-full flex items-center justify-center mb-8 group-hover:border-gold group-hover:bg-gold/5 transition-all duration-300">
                     <svg
-                      className="w-[18px] h-[18px] stroke-green"
+                      className="w-[20px] h-[20px] stroke-green group-hover:stroke-gold transition-colors duration-300"
                       viewBox="0 0 24 24"
                       fill="none"
                       strokeWidth="1.5"
@@ -469,21 +491,22 @@ export default async function LocalePage() {
                     </svg>
                   </div>
 
-                  <h3 className="font-display text-2xl font-semibold text-ink mb-3">
+                  <h3 className="font-display text-2xl font-semibold text-ink mb-3 group-hover:text-green transition-colors">
                     {tWho("agencyTitle")}
                   </h3>
                   <p className="text-sm text-ink-mid leading-[1.8] mb-7 relative z-10">
                     {tWho("agencyBody")}
                   </p>
 
-                  <ul className="flex flex-col gap-2" role="list">
-                    {agencyFeatures.map((f) => (
+                  <ul className="flex flex-col gap-3" role="list">
+                    {agencyFeatures.map((f, idx) => (
                       <li
                         key={f}
-                        className="flex items-center gap-3 text-[0.82rem] text-green"
+                        className="flex items-center gap-3 text-[0.85rem] text-green font-medium transition-all duration-300"
+                        style={{ transitionDelay: `${idx * 50}ms` }}
                       >
                         <span
-                          className="w-3 h-px bg-green flex-shrink-0"
+                          className="w-4 h-px bg-gradient-to-r from-green to-green/30 flex-shrink-0 group-hover:w-6 transition-all duration-300"
                           aria-hidden="true"
                         />
                         {f}
@@ -617,10 +640,10 @@ export default async function LocalePage() {
         <section
           id="contact"
           aria-labelledby="cta-heading"
-          className="bg-green-dark py-44 px-6 md:px-16 text-center relative overflow-hidden"
+          className="bg-gradient-to-b from-green-dark via-green-dark to-green-dark/95 py-48 px-6 md:px-16 text-center relative overflow-hidden"
         >
           <svg
-            className="absolute inset-0 w-full h-full opacity-[0.045] pointer-events-none"
+            className="absolute inset-0 w-full h-full opacity-[0.05] pointer-events-none"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -643,60 +666,74 @@ export default async function LocalePage() {
             className="absolute inset-0 flex items-center justify-center pointer-events-none"
             aria-hidden="true"
           >
-            <div className="w-[500px] h-[500px] rounded-full border border-white/[0.05] absolute" />
-            <div className="w-[780px] h-[780px] rounded-full border border-white/[0.03] absolute" />
-            <div className="w-[1060px] h-[1060px] rounded-full border border-white/[0.018] absolute" />
+            <div className="w-[500px] h-[500px] rounded-full border border-white/[0.06] absolute" />
+            <div className="w-[780px] h-[780px] rounded-full border border-white/[0.04] absolute" />
+            <div className="w-[1060px] h-[1060px] rounded-full border border-white/[0.02] absolute" />
           </div>
 
-          <div className="relative z-10 max-w-2xl mx-auto">
+          <div className="relative z-10 max-w-3xl mx-auto">
             <span className={`reveal ${eyebrow}`}>{tCta("eyebrow")}</span>
             <h2
               id="cta-heading"
-              className="reveal font-display text-[clamp(2.2rem,6vw,4rem)] font-light leading-[1.08] text-cream mb-6"
+              className="reveal font-display text-[clamp(2.3rem,7vw,4.2rem)] font-light leading-[1.05] text-cream mb-8 drop-shadow-lg"
             >
               {tCta("heading")}
               <br />
-              <em className="italic text-gold-light">{tCta("headingEm")}</em>
+              <em className="italic text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-gold-light">{tCta("headingEm")}</em>
             </h2>
-            <p className="reveal text-[0.93rem] text-cream/70 max-w-md mx-auto mb-14 leading-[1.8]">
+            <p className="reveal text-[0.96rem] text-cream/75 max-w-xl mx-auto mb-16 leading-[1.8] font-light">
               {tCta("body")}
             </p>
 
-            <div className="reveal flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="reveal flex flex-col sm:flex-row gap-5 justify-center">
               <a
                 href="mailto:sales@webbinghub.io"
-                className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-gold text-green-dark text-[0.78rem] font-medium tracking-[0.12em] uppercase hover:bg-gold-light transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
+                className="group inline-flex items-center justify-center gap-3 px-10 py-5 bg-gradient-to-r from-gold via-gold-light to-gold text-green-dark text-[0.8rem] font-bold tracking-[0.12em] uppercase rounded-lg hover:shadow-[0_20px_50px_rgba(212,175,55,0.35)] hover:scale-105 transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 aria-label="Send an email to WebbingHUB TRAVEL"
               >
                 {tCta("cta1")}
-                <span aria-hidden="true">→</span>
+                <span className="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
               </a>
               <a
                 href="https://webbinghub.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 px-10 py-4 border border-cream/25 text-cream/70 text-[0.78rem] tracking-[0.12em] uppercase hover:border-cream/50 hover:text-cream transition-all duration-300"
+                className="group inline-flex items-center justify-center gap-3 px-10 py-5 border-2 border-cream/30 text-cream text-[0.8rem] font-bold tracking-[0.12em] uppercase rounded-lg hover:border-gold hover:text-gold hover:bg-white/[0.08] transition-all duration-300 backdrop-blur-sm"
                 aria-label="Visit WebbingHUB main website (opens in new tab)"
               >
                 {tCta("cta2")}
+                <span className="group-hover:translate-x-1 transition-transform" aria-hidden="true">↗</span>
               </a>
             </div>
+
+            <p className="reveal text-[0.75rem] text-cream/50 mt-10 tracking-wider">
+              ✓ Response within 24 hours
+            </p>
           </div>
         </section>
       </main>
 
       {/* ── FOOTER ───────────────────────────────────────────── */}
       <footer
-        className="bg-green-dark border-t border-white/[0.06] px-6 md:px-16 py-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+        className="bg-green-dark border-t border-white/[0.06] px-6 md:px-16 py-10 flex flex-col sm:flex-row items-center justify-between gap-8"
         role="contentinfo"
       >
-        <span className="font-display text-[0.88rem] tracking-[0.15em] uppercase text-cream/45">
-          Travel{" "}
-          <span className="text-gold" aria-hidden="true">
-            |
-          </span>{" "}
-          by Webbing<span className="text-gold">HUB</span>
-        </span>
+        <a
+          href="https://webbinghub.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center hover:opacity-80 transition-opacity duration-200"
+          aria-label="Visit WebbingHUB main website"
+        >
+          <Image
+            src={logoWebbingHub}
+            alt="WebbingHUB TRAVEL"
+            width={200}
+            height={40}
+            className="h-10 w-auto filter brightness-90 hover:brightness-100 transition-all duration-200"
+            priority
+          />
+        </a>
 
         <nav aria-label="Footer navigation">
           <a
