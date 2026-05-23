@@ -17,7 +17,16 @@
       "mcp__Claude_in_Chrome__tabs_context_mcp",
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
-      "Bash(cd \"D:\\\\travel-webbinghub\" && mkdir -p src/i18n messages \"src/app/[locale]\" && echo done)"
+      "Bash(cd \"D:\\\\travel-webbinghub\" && mkdir -p src/i18n messages \"src/app/[locale]\" && echo done)",
+      "Bash(curl -s http://localhost:3000/robots.txt)",
+      "Bash(kill %1)",
+      "mcp__magic__21st_magic_component_inspiration",
+      "mcp__magic__21st_magic_component_refiner",
+      "Bash(netstat -ano)",
+      "Bash(findstr \"3000\\\\|61086\\\\|4321\")",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(git push *)",
+      "Bash(git commit -m 'Refine hero title emphasis - only '\\\\''your team does'\\\\'' gets underline *)"
     ]
   }
 }

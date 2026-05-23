@@ -1,0 +1,30 @@
+# Robots.txt for TRAVEL by WebbingHUB
+# Generated dynamically by src/app/robots.ts
+# This is a fallback static file
+
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Crawl-delay: 1
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Crawl-delay: 2
+
+# Aggressive bots - disallow
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+Sitemap: https://travel.webbinghub.io/sitemap.xml
